@@ -1,0 +1,117 @@
+<?php
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Description of ArenaController
+ *
+ * @author Camille
+ */
+
+class ArenaController extends AppController
+{
+  public $helpers = array('Html', 'Form');
+    public $uses = array('Player', 'Fighter', 'Event');
+    public $components = array( 'Session' ); 
+    
+      //public  $name = 'Jqplots';                     
+    
+
+    /**
+     * index method : first page
+     *
+     * @return void
+     */
+    
+    /// FONCTIONS C
+    public function beforeFilter(){
+        
+      
+           if (!CakeSession::check('nom'))
+  {
+    $this->redirect(array("controller" => "Players", 
+                          "action" => "home"));
+    }
+   
+    }
+    
+    
+    //HOME PAGE COMPTE USER
+    public function home_session()
+    {
+         
+    }
+    
+    // Fonction globale de deconnexion + Redirection vers home page
+    public function deconnexion()
+    {
+        CakeSession::destroy();
+       // if (CakeSession::check('nom'))
+    
+         $this->redirect(array("controller" => "Players", 
+                          "action" => "home"));
+    }
+    
+    
+    
+  
+    
+    
+    public function affichage1d(){
+        
+       $this->set('tab', $this->Fighter->tabFill());
+         
+         
+    }
+    
+    public function affichage2d(){
+             if ($this->request->is('post')) {
+            if (isset($this->request->data["Fightermove"]))
+                $this->Fighter->doMove(CakeSession::read('fighter'), $this->request->data['Fightermove']['direction']);
+            if (isset($this->request->data["Fighterattack"]))
+                $this->Fighter->doAttack(CakeSession::read('fighter'), $this->request->data['Fighterattack']['attack']);
+        }
+        $this->set('tabArena', $this->Fighter->arenaFill());
+    }
+
+    
+      public function diary(){
+        
+          $id_joueur = CakeSession::read('nom')['id'];
+         $id_fighter = CakeSession::read('fighter');
+          $data = $this->Fighter->find('first',array('conditions'=>array('fighter.id'=>$id_fighter)));
+        
+          $this->set('tab', $this->Event->eventsFill($data));
+    }
+  
+    
+    function hall_of_fame(){
+         //$this->layout='clean'; 
+    }
+    
+    
+    /// FONCTIONS S
+    
+public function fighter(){
+        $this->set('raw',$this->Fighter->findById(1)); 
+       
+    }
+     public function sight(){
+        if ($this->request->is('post'))       
+        {   
+             pr($this->request->data); 
+        }
+        $this->set('raw',$this->Fighter->find('all'));   
+        $this->Fighter->doMove(1, $this->request->data['Fightermove']['direction']);
+    }
+    
+   
+    
+    
+    
+}
+

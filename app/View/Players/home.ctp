@@ -82,7 +82,7 @@
         <h4 class="modal-title" id="myModalLabel">INSCRIPTION</h4>
       </div>
       <div class="modal-body">
-<form method="POST" action="../inscription" class="well form-inline">
+<form method="POST" action="inscription" class="well form-inline">
             Votre email :     
             <input class="form-control" type="email" name="email" value="" placeholder="Email" required/><br/><br/>
             Mot de passe : 

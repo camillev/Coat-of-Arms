@@ -32,7 +32,7 @@ echo "affichage 1D -> tab datatables";
     ?>
         <tr>
             <td><?=$value['vue']?></td>
-            <td><?= $this->Html->image($value['avatar'], array('alt' => 'CakePHP', 'width' => '70%'))?></td>
+            <td><?= $this->Html->image($value['avatar'], array('alt' => 'CakePHP',  'width' => '50px'))?></td>
             <td><?=$value['data']['name']?></td>
                  <td>(<?=$value['data']['coordinate_x']?>,<?=$value['data']['coordinate_y']?>)</td>
       

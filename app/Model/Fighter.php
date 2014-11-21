@@ -25,6 +25,19 @@ public $belongsTo = array(
 
 );
 
+function go_arena($id){
+    
+    do {
+    $x=rand(0,14);
+    $y=rand(0,9);
+    $resp=$this->getFighter($x,$y);
+    }
+    while($resp!=false);
+        
+    $data=array( 'coordinate_x' => $x , 'coordinate_y' => $y, 'id' => $id );
+    $this->save($data);
+}
+
 function test_avatar($id)
 {
     $dir = new Folder(IMAGES.'avatar');

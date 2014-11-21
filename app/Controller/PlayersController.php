@@ -45,6 +45,25 @@ class PlayersController extends AppController {
                     //Mail inscription
                    //$this->Player->mail_inscription($email);
                     $this->Session->setFlash('Inscription avec succes'); 
+               
+                    if ($this->Player->connexion($email, $pass))
+            {
+               $fighter = $this->Fighter->find('first',array('conditions'=>array('player_id'=> CakeSession::read('nom')['id'],'coordinate_x !='=> '-1' )));
+    if(!empty($fighter)){
+    
+        CakeSession::write('fighter',$fighter['Fighter']['id']);
+       
+        
+    }
+                
+                
+                $this->redirect(array("controller" => "Arena", 
+            "action" => "home_session"));}
+                    
+                    
+                    
+                    
+                    
                }
                else {
                    //Email deja existant
@@ -67,6 +86,9 @@ class PlayersController extends AppController {
     
     
         
+    
+    
+    
     //Fonction de connexion
     function connexion(){
         

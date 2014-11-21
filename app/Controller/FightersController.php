@@ -22,6 +22,13 @@ class FightersController extends AppController {
   }
       }
        
+      public function delete_fighter($id){
+          
+          $this->Fighter->delete($id);
+          $this->redirect(array("controller" => "Fighters", 
+                          "action" => "liste_perso"));
+      }
+      
       
        //Page d'accueil de Fighters 
        public function liste_perso(){
@@ -49,6 +56,8 @@ class FightersController extends AppController {
             }
              //$this->response->header('location' , 'liste_perso' );
              //$this->response->send();
+                $this->redirect(array("controller" => "Fighters", 
+                          "action" => "liste_perso"));
         }
         
     }

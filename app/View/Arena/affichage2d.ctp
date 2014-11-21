@@ -49,7 +49,7 @@
                  
                 else if ($tabArena[$j][$i]['type']=='vide'){?>
                  <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Il n'y a rien ici !"> 
-                     <?php echo $this->Html->image('vide.png', array('alt'=>'???', 'width'=>'40px'))?>
+                     <?php echo $this->Html->image('herbe.jpg', array('alt'=>'???', 'width'=>'40px'))?>
                      </button>   
             <?php echo "";}}?>
                 <br>

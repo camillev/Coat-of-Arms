@@ -46,6 +46,33 @@ class ArenaController extends AppController
          
     }
     
+    //
+    public function enter_arena(){
+        
+        if (CakeSession::check('fighter'))
+  {
+    $this->redirect(array("controller" => "Arena", 
+                          "action" => "affichage2d"));
+    }
+        
+           $idjoueur = CakeSession::read('nom')['id']; 
+
+        $data = $this->Fighter->afficher_fighter($idjoueur);
+
+        $this->set('list',$data);
+        
+    }
+    
+    function rand_position($id){
+        
+        $this->Fighter->go_arena($id);  
+        CakeSession::write('fighter',$id);
+        $this->redirect(array("controller" => "Arena", 
+                          "action" => "affichage2d"));
+       
+    }
+    
+    
     // Fonction globale de deconnexion + Redirection vers home page
     public function deconnexion()
     {
@@ -63,12 +90,25 @@ class ArenaController extends AppController
     
     public function affichage1d(){
         
+             if (!CakeSession::check('fighter'))
+  {
+    $this->redirect(array("controller" => "Arena", 
+                          "action" => "enter_arena"));
+    }
+        
        $this->set('tab', $this->Fighter->tabFill());
          
          
     }
     
     public function affichage2d(){
+        
+         if (!CakeSession::check('fighter'))
+  {
+    $this->redirect(array("controller" => "Arena", 
+                          "action" => "enter_arena"));
+    }
+    
              if ($this->request->is('post')) {
             if (isset($this->request->data["Fightermove"]))
                 $this->Fighter->doMove(CakeSession::read('fighter'), $this->request->data['Fightermove']['direction']);
@@ -80,6 +120,12 @@ class ArenaController extends AppController
 
     
       public function diary(){
+          
+               if (!CakeSession::check('fighter'))
+  {
+    $this->redirect(array("controller" => "Arena", 
+                          "action" => "enter_arena"));
+    }
         
           $id_joueur = CakeSession::read('nom')['id'];
          $id_fighter = CakeSession::read('fighter');

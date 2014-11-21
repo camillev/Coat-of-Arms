@@ -8,6 +8,10 @@
 
 ?>
   <?= $this->Html->script('jquery-1'); ?>
+
+  <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#Modal">
+       Add new fighter
+      </button>
     
 <?= $this->Html->link(
     'Add new fighter',
@@ -31,6 +35,7 @@
 <th>Strength</th>
 <th>Health</th>
 <th>Manage</td>
+<td>Delete</td>
 </tr>
 </thead>
 <tbody>
@@ -57,13 +62,44 @@ echo "<td>".$bla['Fighter']['current_health'].'/'.$bla['Fighter']['skill_health'
         'full_base' => true
     ) );
 ?></td>
+<td><?= $this->Html->link(
+    'Delete',
+    array(
+        'controller' => 'Fighters',
+        'action' => 'delete_fighter/'.$bla['Fighter']['id'],
+        'full_base' => true
+    ) );
+?></td>
     <?php
 } ?>
 
 </tbody>
 </table>
 
+<!-- Modal -->
+<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add a new fighter</h4>
+      </div>
+      <div class="modal-body">
+       <form method="POST" action="add_perso" class="well form-inline" enctype="multipart/form-data">
+            <input class="form-control" type="text" name="name" value=""  placeholder="Name" />
+            <input class="form-control" type="file" name="data[add_perso][avatar_file]"  placeholder="Image" />
+            <input class="btn btn-primary" type="submit" name="sub" value="Add"/>
+</form>
+    </form>
+      </div>
+     
+    </div>
+  </div>
+</div>
 
+<script>
+    $('#Modal').modal(options);
+</script>
 
 
 <script>

@@ -345,6 +345,29 @@ if ($this->test_avatar($data[$i]['Fighter']['id'])==1)
 return $data;
 }
 
+function check_time(){
+    $fighter = $this->find('first', array('conditions'=>array('id'=>CakeSession::read('fighter'))));
+    $temps = $fighter['Fighter']['next_action_time'];
+    $date_actuelle = new DateTime();
+    $temps_actuel = $date_actuelle->format('y-m-d H:i:s');
+    $max_action = 3;
+    $temps_action = 10;
+    
+    if(($temps_actuel - $temps)>= $temps_action){
+        if(($temps_actuel-$temps)>= ($max_action*$temps_action)){
+            $newtime = $temps_actuel-(($max_action-1)*$temps_action);
+        }
+        else{
+            $newtime = $temps + $temps_action;
+        }
+        $data = array('id'=>CakeSession::read('fighter'), 'next_action-time'=>$newtime);
+        $this->save($data);
+        return true;
+    }
+    else {
+        return false;
+    }
+}
      
     
 }

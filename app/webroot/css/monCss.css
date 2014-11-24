@@ -29,6 +29,16 @@ div#myInfos {
     text-align : center;
 }
 
+
+div#evolv {
+    background : white;
+    //border-radius :10px;
+    padding : 15px;
+    margin-bottom: 10px;
+    margin-top : 20px;
+    text-align : center;
+}
+
 div#content {
     bottom: 100px;
  
@@ -36,3 +46,47 @@ div#content {
    
 }
 
+table#arena {
+    //width : 60%;
+    width : 95%;
+    
+}
+
+table#arena td {
+    width : 30px;
+    height : 30px;
+    text-align: center;
+    
+}
+
+table#pad td {
+    width : 30px;
+    height : 30px;
+    
+}
+
+button#case {
+    padding : 0px;
+    //background : black;
+    //height:100%;
+    //width : 100%;
+}
+
+img#imagecase {
+    padding : 0px;
+}
+
+table#arena tr{
+    margin-top : 0px;
+    margin-bottom : 0px;
+}
+
+div#evolution {
+    float : right;
+    width : 35% ; 
+}
+
+div#direction {
+    float : right;
+    width : 35%;
+}

@@ -110,13 +110,57 @@ class ArenaController extends AppController
     }
     
              if ($this->request->is('post')) {
-            if (isset($this->request->data["Fightermove"]))
-                $this->Fighter->doMove(CakeSession::read('fighter'), $this->request->data['Fightermove']['direction']);
-            if (isset($this->request->data["Fighterattack"]))
-                $this->Fighter->doAttack(CakeSession::read('fighter'), $this->request->data['Fighterattack']['attack']);
+            if (isset($this->request->data["Fightermove"])){
+            $this->Fighter->doMove(CakeSession::read('fighter'), $this->request->data['Fightermove']['direction']);}
+            if (isset($this->request->data["Fighterattack"])){
+            $this->Fighter->doAttack(CakeSession::read('fighter'), $this->request->data['Fighterattack']['attack']);}
         }
         $this->set('tabArena', $this->Fighter->arenaFill());
+         $this->set('id', CakeSession::read('fighter'));
+        
+        
+        /// Evolution perso
+        $this->set('info', $this->Fighter->info_perso(CakeSession::read('fighter')));
+         if ($this->Fighter->test_avatar(CakeSession::read('fighter'))==1)
+        {
+            $this->set('img','avatar/'.CakeSession::read('fighter').'.png');
+        }
+        else
+        {
+            $this->set('img','blason_def.png');
+        }
+        
     }
+    
+    
+      
+    //Page evolution des Fighter
+     public function manage_perso($id) {
+              
+        if ($this->request->is('post'))
+        {
+        
+            if ($this->request->data['vue']== TRUE)
+            {
+               $this->Fighter->evolution_perso($id, 'vue');
+            }
+        if ($this->request->data['force']==TRUE)
+        {
+            $this->Fighter->evolution_perso($id, 'force');
+        }
+        if ($this->request->data['vie']==TRUE)
+        {
+            $this->Fighter->evolution_perso($id, 'vie');
+        }
+        
+        
+        $this->redirect(array("controller"=> "Arena",'action' => 'affichage2d'));
+        }
+        
+    }
+    
+    
+    
 
     
       public function diary(){

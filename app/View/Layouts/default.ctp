@@ -162,7 +162,7 @@
       Group : 09-CG <br/>
       Contact information: <a href="mailto:coatofarms-contact@gmail.com">
   coaotofarms-contact@gmail.com</a>.<br/>
-  Adresse du site/ Addresse github/Options suplémentaires<br/>
+  Adresse du site/ <a href="https://github.com/camillev/Coat-of-Arms">Github</a> /Options suplémentaires<br/>
   </footer>
       
       

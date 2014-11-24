@@ -10,7 +10,7 @@ echo "diary";
 ?>
   <?= $this->Html->script('jquery-1'); ?>
     
-<table id="ex" class="display" accept-charset="utf-8">
+<table id="ex" class="display">
     <thead>
         <tr>
             <th>Distance de moi</th>

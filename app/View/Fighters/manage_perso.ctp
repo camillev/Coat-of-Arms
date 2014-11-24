@@ -27,7 +27,7 @@
         niveau : <?= $info['level'] ?><br/>
         force : <?= $info['skill_strength'] ?><br/> 
         vue : <?= $info['skill_sight'] ?><br/> 
-        vie : <?= $info['skill_health'] ?> / <?= $info['current_health'] ?><br/>
+        vie : <?= $info['current_health'] ?> / <?= $info['skill_health'] ?><br/>
         experience : <?= $info['xp'] ?><br/> 
         </div>
         

@@ -34,8 +34,8 @@
 <th>Sight</th>
 <th>Strength</th>
 <th>Health</th>
-<th>Manage</td>
-<td>Delete</td>
+<th>Manage</th>
+<th>Delete</th>
 </tr>
 </thead>
 <tbody>
@@ -54,21 +54,23 @@ echo "<td>".$bla['Fighter']['skill_sight']."</td>";
 echo "<td>".$bla['Fighter']['skill_strength']."</td>";
 echo "<td>".$bla['Fighter']['current_health'].'/'.$bla['Fighter']['skill_health']."</td>";
 ?>
-<td><?= $this->Html->link(
-    'Manage',
+<td><?= $this->Html->link('',
+    
     array(
         'controller' => 'Fighters',
         'action' => 'manage_perso/'.$bla['Fighter']['id'],
         'full_base' => true
-    ) );
+    ),
+        array('class'=>"glyphicon glyphicon-edit", 'escape' => false));
 ?></td>
 <td><?= $this->Html->link(
-    'Delete',
+    '',
     array(
         'controller' => 'Fighters',
         'action' => 'delete_fighter/'.$bla['Fighter']['id'],
         'full_base' => true
-    ) );
+    ),
+        array('class'=>"glyphicon glyphicon-trash", 'escape' => false));
 ?></td>
     <?php
 } ?>

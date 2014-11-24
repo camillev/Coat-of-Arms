@@ -37,7 +37,7 @@
          <?php  if (CakeSession::check('nom'))
               { 
        ?>
-        <a class="navbar-brand" href="../Players/home_session"><span class="glyphicon glyphicon-home"></span></a>
+        <a class="navbar-brand" href="../Arena/home_session"><span class="glyphicon glyphicon-home"></span></a>
               <?php
              } else { ?>
         <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span></a>
@@ -50,7 +50,7 @@
               { 
        ?>
       <ul class="nav navbar-nav">
-        <li class="active"><?= $this->Html->link(
+        <li><?= $this->Html->link(
     'Arena',
     array(
         'controller' => 'Arena',

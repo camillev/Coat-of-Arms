@@ -71,7 +71,7 @@
     </div>
     
     <!-- PARTIE SUR LE COTE -->
-    <div class="col-md-4">
+    <div class="col-md-3">
         <!-- EVOLUTION -->
         <div class="row">
             <div class="row">
@@ -128,7 +128,40 @@
     </div>
         </div>
         <div class="row">
-            <?php
+           <table id="ex" class="display" accept-charset="utf-8">
+    <thead>
+        <tr>
+            <th>Distance de moi</th>
+            <th>Name</th>
+            <th>Date</th>
+             <th>Position</th>
+              
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+    if(!empty($tab)){
+    foreach ($tab as $value){
+    ?>
+        <tr>
+            <td><?=$value['vue']?></td>
+            <td><?=$value['data']['name']?></td>
+            <td><?=$value['data']['date']?></td>
+             <td>(<?=$value['data']['coordinate_x']?>,<?=$value['data']['coordinate_y']?>)</td>
+       
+        </tr>
+       
+    <?php }} ?>
+    </tbody>
+</table>
+            
+        </div>    
+            
+    </div>
+</div>
+
+
+ <?php
 echo $this->Form->create('Fightermove');
 echo $this->Form->input('direction',array('options' => array('north'=>'north','east'=>'east','south'=>'south','west'=>'west'), 'default' => 'east'));
 echo $this->Form->end('Move');
@@ -138,11 +171,6 @@ echo $this->Form->create('Fighterattack');
 echo $this->Form->input('attack',array('options' => array('north'=>'north','east'=>'east','south'=>'south','west'=>'west'), 'default' => 'east'));
 echo $this->Form->end('Attack');
 ?>
-            
-        </div>    
-            
-    </div>
-</div>
 
 
 <div class="col-md-6">
@@ -194,3 +222,10 @@ echo $this->Form->end('Attack');
 <script>$(function () {
   $('[data-toggle="tooltip"]').tooltip({html : true})
 })</script>
+
+
+<script>
+    $(document).ready( function () {
+    $('#ex').DataTable();
+} );
+</script>

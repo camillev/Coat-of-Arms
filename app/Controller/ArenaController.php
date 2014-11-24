@@ -130,6 +130,15 @@ class ArenaController extends AppController
             $this->set('img','blason_def.png');
         }
         
+        
+        
+        ///Diary
+         //$id_joueur = CakeSession::read('nom')['id'];
+         $id_fighter = CakeSession::read('fighter');
+          $data = $this->Fighter->find('first',array('conditions'=>array('fighter.id'=>$id_fighter)));
+        
+          $this->set('tab', $this->Event->eventsFill($data));
+        
     }
     
     

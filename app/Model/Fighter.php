@@ -25,6 +25,18 @@ public $belongsTo = array(
 
 );
 
+function position_aleatoire(){
+    do {
+    $x=rand(0,14);
+    $y=rand(0,9);
+    $resp=$this->getFighter($x,$y);
+    }
+    while($resp!=false);
+    $position = array('x'=>$x,'y'=>$y);
+    return $position;
+}
+
+
 function go_arena($id){
     
     do {

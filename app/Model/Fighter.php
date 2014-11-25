@@ -7,6 +7,7 @@
  */
   App::uses('Folder', 'Utility');
 App::uses('File', 'Utility');
+App::uses('Surrounding','Model');
 
 class Fighter extends AppModel{
     
@@ -30,8 +31,11 @@ function position_aleatoire(){
     $x=rand(0,14);
     $y=rand(0,9);
     $resp=$this->getFighter($x,$y);
+    $s = new Surrounding();
+    $resp2=$s->getSurrounding($x,$y);
+                           
     }
-    while($resp!=false);
+    while($resp!=false && $resp2!=false);
     $position = array('x'=>$x,'y'=>$y);
     return $position;
 }
@@ -315,8 +319,18 @@ function carroussel_avatar()
                         else{
                             $avatar = "blason_def.png";
                         }
-                    $tab[]=array('vue'=> abs($i-$y)+abs($j -$x) , 'data' => $donnee, 'avatar' => $avatar);
+                    $tab[]=array('vue'=> abs($i-$y)+abs($j -$x) , 'data' => $donnee, 'avatar' => $avatar, 'type'=>'fighter');
                     
+                        }
+                        else {
+                           //Recuperer surroundings
+                            $s = new Surrounding();
+                            $donnee=$s->getSurrounding($j,$i);
+                            if(!empty($donnee))
+                            {
+                                $tab[]=array('vue'=>abs($i-$y)+abs($j-$x),'data'=> $donnee,'type'=>'surrounding');
+                            }
+                               
                         }
                     
                   
@@ -327,7 +341,7 @@ function carroussel_avatar()
      }
      
      
-     /// FONCTIONS LULU
+     /// FONCTIONS LULU 
       function afficher_fighter($id){
 
 $data= $this->find('all', array('conditions'=>array('player_id'=> $id)));

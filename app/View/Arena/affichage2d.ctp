@@ -51,7 +51,7 @@
                  
                  
                 else if($tabArena[$j][$i]['type']=='me'){?>
-            <td><button type="button" id="case" class="btn btn-xs btn-block"  data-toggle="tooltip" data-placement="top" title="Coucou c'est moi !"> 
+            <td><button type="button" id="case" class="btn btn-xs btn-block"  data-toggle="tooltip" data-placement="top" title="<?php echo $tabArena[$j][$i]['state']?>"> 
                     <?php echo $this->Html->image('me.png', array('alt'=>'???', 'width'=>'100%','id'=> 'imagecase'))?> 
                 </button></td>
                  <?php echo "";}
@@ -67,8 +67,8 @@
                  
                 else if ($tabArena[$j][$i]['type']=='surrounding'){ 
                     ?>
-                <td><button type="button"  id="case" class="btn btn-xs btn-block" data-toggle="tooltip" data-placement="top" title="Un surrounding"> 
-                     <?php echo $this->Html->image($tabArena[$j][$i]['data']['type'].'.jpg', array('alt'=>'???', 'width'=>'100%','id'=> 'imagecase'))?>
+                <td><button type="button"  id="case" class="btn btn-xs btn-block" data-toggle="tooltip" data-placement="top" title="<?= $tabArena[$j][$i]['data']['type']?> ">
+                     <?php echo $this->Html->image($tabArena[$j][$i]['data']['type'].'.png', array('alt'=>'???', 'width'=>'100%','id'=> 'imagecase'))?>
                  </button></td> 
                  
             <?php echo "";}}?>

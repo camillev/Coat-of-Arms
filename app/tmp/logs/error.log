@@ -21206,3 +21206,860 @@ Request URL: /Coat-of-Arms/images/sort_both.png
 Stack Trace:
 #0 C:\Wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-11-25 17:43:16 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:43:28 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:43:32 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:43:32 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_both.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:43:32 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_asc.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:43:36 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:43:36 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_both.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:43:36 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_asc.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:43:42 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:43:42 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_both.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:43:42 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_asc.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:43:59 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:44:00 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_both.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:44:00 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_asc.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:44:03 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:44:03 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_both.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:44:03 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_asc.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:44:10 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:44:10 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_both.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:44:10 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_asc.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:45:23 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:45:24 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_both.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:45:24 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_asc.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:46:00 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:46:00 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/img/rock.jpg
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:46:00 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_both.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:46:00 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_asc.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:46:16 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:46:16 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/img/rock.jpg
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:46:16 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_both.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:46:16 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_asc.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:47:44 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:47:44 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/img/rock.jpg
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:47:44 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_both.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:47:44 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_asc.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:50:07 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:50:07 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/img/rock.jpg
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:50:07 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_both.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:50:07 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_asc.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:50:20 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:50:20 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_both.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:50:20 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_asc.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:51:03 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:51:04 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_both.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:51:04 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_asc.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:51:14 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:51:15 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_both.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:51:15 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_asc.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:53:19 Error: [MissingActionException] Action ArenaController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'ArenaController',
+  'action' => 'index',
+)
+Request URL: /Coat-of-Arms/Arena/
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\Coat-of-Arms\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ArenaController), Object(CakeRequest))
+#2 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-11-25 17:53:19 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:53:24 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:53:24 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_both.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 17:53:24 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_asc.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:03:37 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:14:01 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:16:21 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:16:21 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_both.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:16:21 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_asc.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:16:28 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:16:28 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_both.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:16:28 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_asc.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:16:39 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:16:39 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_both.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:16:39 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_asc.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:16:41 Error: [PDOException] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'arenaweb.surrounding' doesn't exist
+Request URL: /Coat-of-Arms/Arena/affichage2d
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\wamp\www\Coat-of-Arms\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('Select * from s...', Array)
+#2 C:\wamp\www\Coat-of-Arms\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('Select * from s...', Array, Array)
+#3 C:\wamp\www\Coat-of-Arms\lib\Cake\Model\Datasource\DboSource.php(537): DboSource->fetchAll('Select * from s...')
+#4 [internal function]: DboSource->query('Select * from s...')
+#5 C:\wamp\www\Coat-of-Arms\lib\Cake\Model\Model.php(3328): call_user_func_array(Array, Array)
+#6 C:\wamp\www\Coat-of-Arms\app\Model\Surrounding.php(38): Model->query('Select * from s...')
+#7 C:\wamp\www\Coat-of-Arms\app\Model\Fighter.php(249): Surrounding->getDanger('3', '8')
+#8 C:\wamp\www\Coat-of-Arms\app\Controller\ArenaController.php(128): Fighter->arenaFill()
+#9 [internal function]: ArenaController->affichage2d()
+#10 C:\wamp\www\Coat-of-Arms\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ArenaController), Array)
+#11 C:\wamp\www\Coat-of-Arms\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\wamp\www\Coat-of-Arms\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ArenaController), Object(CakeRequest))
+#13 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2014-11-25 18:16:41 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:20:39 Error: [PDOException] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'arenaweb.surrounding' doesn't exist
+Request URL: /Coat-of-Arms/Arena/affichage2d
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\wamp\www\Coat-of-Arms\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('Select * from s...', Array)
+#2 C:\wamp\www\Coat-of-Arms\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('Select * from s...', Array, Array)
+#3 C:\wamp\www\Coat-of-Arms\lib\Cake\Model\Datasource\DboSource.php(537): DboSource->fetchAll('Select * from s...')
+#4 [internal function]: DboSource->query('Select * from s...')
+#5 C:\wamp\www\Coat-of-Arms\lib\Cake\Model\Model.php(3328): call_user_func_array(Array, Array)
+#6 C:\wamp\www\Coat-of-Arms\app\Model\Surrounding.php(38): Model->query('Select * from s...')
+#7 C:\wamp\www\Coat-of-Arms\app\Model\Fighter.php(249): Surrounding->getDanger('3', '8')
+#8 C:\wamp\www\Coat-of-Arms\app\Controller\ArenaController.php(128): Fighter->arenaFill()
+#9 [internal function]: ArenaController->affichage2d()
+#10 C:\wamp\www\Coat-of-Arms\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ArenaController), Array)
+#11 C:\wamp\www\Coat-of-Arms\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\wamp\www\Coat-of-Arms\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ArenaController), Object(CakeRequest))
+#13 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2014-11-25 18:20:39 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:20:46 Error: [PDOException] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'arenaweb.surrounding' doesn't exist
+Request URL: /Coat-of-Arms/Arena/affichage2d
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\wamp\www\Coat-of-Arms\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('Select * from s...', Array)
+#2 C:\wamp\www\Coat-of-Arms\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('Select * from s...', Array, Array)
+#3 C:\wamp\www\Coat-of-Arms\lib\Cake\Model\Datasource\DboSource.php(537): DboSource->fetchAll('Select * from s...')
+#4 [internal function]: DboSource->query('Select * from s...')
+#5 C:\wamp\www\Coat-of-Arms\lib\Cake\Model\Model.php(3328): call_user_func_array(Array, Array)
+#6 C:\wamp\www\Coat-of-Arms\app\Model\Surrounding.php(42): Model->query('Select * from s...')
+#7 C:\wamp\www\Coat-of-Arms\app\Model\Fighter.php(249): Surrounding->getDanger('3', '8')
+#8 C:\wamp\www\Coat-of-Arms\app\Controller\ArenaController.php(128): Fighter->arenaFill()
+#9 [internal function]: ArenaController->affichage2d()
+#10 C:\wamp\www\Coat-of-Arms\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ArenaController), Array)
+#11 C:\wamp\www\Coat-of-Arms\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\wamp\www\Coat-of-Arms\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ArenaController), Object(CakeRequest))
+#13 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2014-11-25 18:20:46 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:21:00 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'trap' in 'where clause'
+Request URL: /Coat-of-Arms/Arena/affichage2d
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\wamp\www\Coat-of-Arms\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('Select * from s...', Array)
+#2 C:\wamp\www\Coat-of-Arms\lib\Cake\Model\Datasource\DboSource.php(666): DboSource->execute('Select * from s...', Array, Array)
+#3 C:\wamp\www\Coat-of-Arms\lib\Cake\Model\Datasource\DboSource.php(537): DboSource->fetchAll('Select * from s...')
+#4 [internal function]: DboSource->query('Select * from s...')
+#5 C:\wamp\www\Coat-of-Arms\lib\Cake\Model\Model.php(3328): call_user_func_array(Array, Array)
+#6 C:\wamp\www\Coat-of-Arms\app\Model\Surrounding.php(42): Model->query('Select * from s...')
+#7 C:\wamp\www\Coat-of-Arms\app\Model\Fighter.php(249): Surrounding->getDanger('3', '8')
+#8 C:\wamp\www\Coat-of-Arms\app\Controller\ArenaController.php(128): Fighter->arenaFill()
+#9 [internal function]: ArenaController->affichage2d()
+#10 C:\wamp\www\Coat-of-Arms\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(ArenaController), Array)
+#11 C:\wamp\www\Coat-of-Arms\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#12 C:\wamp\www\Coat-of-Arms\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(ArenaController), Object(CakeRequest))
+#13 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2014-11-25 18:21:00 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:22:38 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:22:38 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_both.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:22:38 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_asc.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:23:27 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:23:27 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_both.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:23:27 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_asc.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:23:48 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:23:48 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_both.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:23:48 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_asc.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:27:25 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:27:33 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:27:33 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_both.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:27:34 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_asc.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:27:56 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:27:56 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_both.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:27:56 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_asc.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:28:05 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:28:05 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_both.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 18:28:05 Error: [MissingControllerException] Controller class ImagesController could not be found.
+Exception Attributes: array (
+  'class' => 'ImagesController',
+  'plugin' => NULL,
+)
+Request URL: /Coat-of-Arms/images/sort_asc.png
+Stack Trace:
+#0 C:\wamp\www\Coat-of-Arms\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

@@ -94,26 +94,56 @@ function carroussel_avatar()
     function doMove($fighterId, $direction)
     {   
        //récupérer la position et fixer l'id de travail
-        $datas = $this->read(null, $fighterId);
+        $datas = $this->find('first',array('conditions'=>array('Fighter.id'=>$fighterId)));
         $x = $datas['Fighter']['coordinate_x'];
         $y = $datas['Fighter']['coordinate_y'];
-
-       //faire la modif
-        if ($direction == 'north' && $this->checkOccupied($x,$y+1) && $this->checkLimit($x,$y+1))
-        {$this->set('coordinate_y', $datas['Fighter']['coordinate_y'] + 1);}
-        
-        elseif ($direction == 'south' && $this->checkOccupied($x,$y-1) && $this->checkLimit($x,$y-1))
-        {$this->set('coordinate_y', $datas['Fighter']['coordinate_y'] - 1);}
-        
-        elseif ($direction == 'east' && $this->checkOccupied($x+1,$y) && $this->checkLimit($x+1,$y))
-        {$this->set('coordinate_x', $datas['Fighter']['coordinate_x'] + 1);}
-        
-        elseif ($direction == 'west' && $this->checkOccupied($x-1,$y) && $this->checkLimit($x-1,$y))
-        {$this->set('coordinate_x', $datas['Fighter']['coordinate_x'] - 1);}
-        else
+        $surrounding = new Surrounding();
+        // use the Model
+        if($direction =='north')
+            {$y+=1;}
+        elseif($direction =='south')
+            {$y-=1;}
+        elseif($direction =='east')
+            {$x+=1;}
+        elseif($direction =='west')
+            {$x-=1;}
+        $element = $surrounding->getSurrounding($x,$y);
+        pr($element);
+        if($this->checkOccupied($x,$y) && $this->checkLimit($x,$y))
+        {   
+            if($element==false){
+                $this->set('coordinate_x', $datas['Fighter']['coordinate_x']=$x);
+                $this->set('coordinate_y', $datas['Fighter']['coordinate_y']=$y);
+            }
+            elseif($element['type'] == 'rock'){
+                return false;
+            }       
+            elseif($element['type']=='monster'){
+                $surrounding->set('coordinate_x', $element['coordinate_x']=20);//a faire en rand
+                $surrounding->set('coordinate_y', $element['coordinate_y']=20);//a faire en rand
+                $this->set('current_health', $datas['Fighter']['current_health']=0);
+                echo "You've been killed by a monster !";// à remplacer par la mort du personnage
+            }
+            elseif($element['type']=='exit'){
+                $this->set('coordinate_x', $datas['Fighter']['coordinate_x']=-1);
+                $this->set('coordinate_y', $datas['Fighter']['coordinate_y']=-1); 
+                $surrounding->set('coordinate_x', $element['coordinate_x']=20);//à faire en rand
+                $surrounding->set('coordinate_y', $element['coordinate_y']=20);//a faire en rand
+                echo "you're out";
+            }
+            elseif($element['type']=='trap'){
+                $surrounding->set('coordinate_x', $element['coordinate_x']=20);//a faire en rand
+                $surrounding->set('coordinate_y', $element['coordinate_y']=20);//a faire en rand
+                $this->set('current_health', $datas['Fighter']['current_health']=0);
+                echo "You've fallen into a trap !";
+            }
+        }
+        else 
+        {
             return false;
-       //sauver la modif
-        $this->save();
+        }
+        $this->save($datas);
+        $surrounding->save($element);
         return true;
     }
     
@@ -125,7 +155,7 @@ function carroussel_avatar()
         $datas = $this->find('first',array('conditions'=>array('Fighter.id'=>$fighterId)));
         $x = $datas['Fighter']['coordinate_x'];
         $y = $datas['Fighter']['coordinate_y'];
-
+        $surrounding = new Surrounding();
         if($attack =='north')
             {$y+=1;}
         elseif($attack =='south')
@@ -134,11 +164,13 @@ function carroussel_avatar()
             {$x+=1;}
         elseif($attack =='west')
             {$x-=1;}
-
-        if($this->getFighter($x,$y))
+            
+        $element = $surrounding->getSurrounding($x,$y);
+        pr($element); 
+        
+        if($this->getFighter($x,$y)  && $element==false)
         {
             $victim = $this->find('first',array('conditions'=>array('coordinate_x'=>$x,'coordinate_y'=>$y)));
-            
             $seuil =  10 + $victim['Fighter']['level'] - $datas['Fighter']['level'];
             $rand = rand(0,20);
             
@@ -150,12 +182,20 @@ function carroussel_avatar()
                     // mort de la victime
                  }
             }
+        $this->save($victim);
+        }
+        elseif($element!=false){
+            if($element['type']=='element'){
+            $surrounding->set('coordinate_x', $element['coordinate_x']=20);//à faire en rand
+            $surrounding->set('coordinate_y', $element['coordinate_y']=20);
+            $datas['Fighter']['xp']+=1;
+            $surrounding->save($element);
+            }
         }
         else
             return false;
        //sauver la modif
         $this->save($datas);
-        $this->save($victim);
         return true;
     }
     
@@ -168,7 +208,8 @@ function carroussel_avatar()
          $vue_tot=$data['Fighter']['skill_sight'];
          $x=$data['Fighter']['coordinate_x'];
          $y=$data['Fighter']['coordinate_y'];
-         
+         $s = new Surrounding();
+          
          for ($i=0;$i<15;$i++)
          {
              for ($j=0;$j<10;$j++)
@@ -189,7 +230,7 @@ function carroussel_avatar()
                     $tab[$j][$i]=array('type'=> 'fighter', 'data' => $donnee);}
                     else{
                            //Recuperer surroundings
-                            $s = new Surrounding();
+                           
                             $donnee=$s->getSurroundingVisible($j,$i);
                             if(!empty($donnee))
                             {
@@ -205,7 +246,8 @@ function carroussel_avatar()
              }
          }
          
-        $tab[$x][$y]=array('type' => 'me', 'data'=>$data['Fighter']);
+         $tab[$x][$y]=array('type' => 'me', 'data'=>$data['Fighter'], 'state'=>$s->getDanger($x, $y));
+        
         return $tab;
      }
 

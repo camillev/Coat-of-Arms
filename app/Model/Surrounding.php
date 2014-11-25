@@ -23,7 +23,7 @@ class Surrounding extends AppModel{
      }
      
        function getSurroundingVisible($i,$j){
-         $data1 = $this->find('first',array('conditions'=>array('coordinate_x'=>$i,'coordinate_y'=>$j,'type'=>'rock')));
+         $data1 = $this->find('first',array('conditions'=>array('coordinate_x'=>$i,'coordinate_y'=>$j,'type'=>'arbre')));
          $data2 = $this->find('first',array('conditions'=>array('coordinate_x'=>$i,'coordinate_y'=>$j,'type'=>'exit')));
          if($data1)
          {return $data1['Surrounding'];}

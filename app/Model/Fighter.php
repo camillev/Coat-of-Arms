@@ -115,7 +115,7 @@ function carroussel_avatar()
                 $this->set('coordinate_x', $datas['Fighter']['coordinate_x']=$x);
                 $this->set('coordinate_y', $datas['Fighter']['coordinate_y']=$y);
             }
-            elseif($element['type'] == 'rock'){
+            elseif($element['type'] == 'arbre'){
                 return false;
             }       
             elseif($element['type']=='monster'){

@@ -101,10 +101,20 @@ class ArenaController extends AppController
          
     }
     
+    
+    
+    public function you_re_dead($id_fighter){
+        $dead = $this->Fighter->find('first',array('conditions'=>array('fighter.id'=>$id_fighter,'current_health <=' =>'0')));
+         $this->set('dead',$dead['Fighter']);
+                $this->Fighter->delete($dead['Fighter']['id']);
+         $this->Session->delete('fighter');
+    }
+    
+    
     public function affichage2d(){
         
          if (!CakeSession::check('fighter'))
-  {
+    {
     $this->redirect(array("controller" => "Arena", 
                           "action" => "enter_arena"));
     }
@@ -138,6 +148,16 @@ class ArenaController extends AppController
           $data = $this->Fighter->find('first',array('conditions'=>array('fighter.id'=>$id_fighter)));
         
           $this->set('tab', $this->Event->eventsFill($data));
+          
+          
+          ///Personnage tué
+          $dead = $this->Fighter->find('first',array('conditions'=>array('fighter.id'=>$id_fighter,'current_health <=' =>'0')));
+          if (!empty($dead))
+          {
+                 $this->redirect(array("controller" => "Arena", 
+                          "action" => "you_re_dead/".$id_fighter));
+          }
+         
         
     }
     

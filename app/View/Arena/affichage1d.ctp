@@ -7,8 +7,8 @@
  */
 
 ?>
-<script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-  
+ <?= $this->Html->script('jquery-1'); ?>
+    
 <table id="ex" class="display">
     <thead>
         <tr>
@@ -28,7 +28,9 @@
     <?php
       if(!empty($tab)){
     foreach ($tab as $value){
-    ?>
+    
+        if ($value['type']=='fighter'){?>
+        
         <tr>
             <td><?=$value['vue']?></td>
             <td><?= $this->Html->image($value['avatar'], array('alt' => 'CakePHP',  'width' => '50px'))?></td>
@@ -41,16 +43,31 @@
              <td><?=$value['data']['skill_sight']?></td>
               <td><?=$value['data']['skill_strength']?></td>
                <td>
-                   <div class="progress">
-                       <div class="progress-bar" role="progressbar" aria-valuenow="<?=$value['data']['current_health']?>" aria-valuemin="0" 
-                            aria-valuemax="<?=$value['data']['skill_health']?>" style="width : <?=$value['data']['current_health']/$value['data']['skill_health']*100?>%;">
-                           <?=$value['data']['current_health'].'/'.$value['data']['skill_health']?></div>
-                   </div>
+                 
+                      <?=$value['data']['current_health'].'/'.$value['data']['skill_health']?>
+                          
             
           </td>
         </tr>
+        
+        <?php } else if ($value['type']=='surrounding') { ?>
+        
+           <tr>
+            <td><?=$value['vue']?></td>
+            <td><?= $this->Html->image($value['data']['type'].'.jpg', array('alt' => 'CakePHP',  'width' => '50px'))?></td>
+            <td><?=$value['data']['type']?></td>
+                 <td>(<?=$value['data']['coordinate_x']?>,<?=$value['data']['coordinate_y']?>)</td>
+      
+            <td></td>
+        
+            <td></td>
+             <td></td>
+              <td></td>
+               <td></td>
+        </tr>
+        
        
-      <?php }} ?>
+    <?php }}} ?>
     </tbody>
 </table>
 

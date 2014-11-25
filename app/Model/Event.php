@@ -5,11 +5,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+    App::uses('Surrounding','Model');
 
 class Event extends AppModel{
     
         public $uses = array('Player', 'Fighter', 'Event');
-        
+    
+
         
         
     function get_event($x,$y)
@@ -42,7 +44,7 @@ class Event extends AppModel{
                     $donnee = $this->get_event($j,$i);
                     if ($donnee){
                     $tab[]=array('vue'=> abs($i-$y)+abs($j -$x) , 'data' => $donnee);}
-                  
+                   
              }
          }
          }

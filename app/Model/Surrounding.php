@@ -9,7 +9,7 @@
   App::uses('Folder', 'Utility');
 App::uses('File', 'Utility');
 
-class Fighter extends AppModel{
+class Surrounding extends AppModel{
     
     
     public $displayField = 'name';
@@ -22,6 +22,9 @@ class Fighter extends AppModel{
          else {return false;}
      }
      
-    
-    
-}
+       function getSurroundingVisible($i,$j){
+         $data = $this->find('first',array('conditions'=>array('coordinate_x'=>$i,'coordinate_y'=>$j,'type'=>'colonne')));
+         if($data)
+         {return $data['Surrounding'];}
+         else {return false;}
+     }}

@@ -62,6 +62,15 @@
                 <td><button type="button"  id="case" class="btn btn-xs btn-block" data-toggle="tooltip" data-placement="top" title="Il n'y a rien ici !"> 
                      <?php echo $this->Html->image('herbe.jpg', array('alt'=>'???', 'width'=>'100%','id'=> 'imagecase'))?>
                  </button></td>   
+                      <?php echo "";}
+                 
+                 
+                else if ($tabArena[$j][$i]['type']=='surrounding'){ 
+                    ?>
+                <td><button type="button"  id="case" class="btn btn-xs btn-block" data-toggle="tooltip" data-placement="top" title="Un surrounding"> 
+                     <?php echo $this->Html->image($tabArena[$j][$i]['data']['type'].'.jpg', array('alt'=>'???', 'width'=>'100%','id'=> 'imagecase'))?>
+                 </button></td> 
+                 
             <?php echo "";}}?>
                 <!--<br>-->
         <?php echo "</tr>";}?>

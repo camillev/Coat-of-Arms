@@ -188,8 +188,17 @@ function carroussel_avatar()
                     if ($donnee){
                     $tab[$j][$i]=array('type'=> 'fighter', 'data' => $donnee);}
                     else{
+                           //Recuperer surroundings
+                            $s = new Surrounding();
+                            $donnee=$s->getSurroundingVisible($j,$i);
+                            if(!empty($donnee))
+                            {
+                               $tab[$j][$i]=array('type'=> 'surrounding', 'data' => $donnee);
+                            }
+                             else{
                         $tab[$j][$i]=array('type'=> 'vide');}
-                    }
+                            }
+                 }   
                  else {
                  $tab[$j][$i]=array("type" => 'non_vue');
                  }
@@ -325,7 +334,7 @@ function carroussel_avatar()
                         else {
                            //Recuperer surroundings
                             $s = new Surrounding();
-                            $donnee=$s->getSurrounding($j,$i);
+                            $donnee=$s->getSurroundingVisible($j,$i);
                             if(!empty($donnee))
                             {
                                 $tab[]=array('vue'=>abs($i-$y)+abs($j-$x),'data'=> $donnee,'type'=>'surrounding');

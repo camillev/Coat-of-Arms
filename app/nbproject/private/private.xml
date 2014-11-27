@@ -2,13 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Wamp/www/WebArenaGroupSI1-CG/app/View/Arena/sight.ctp</file>
-            <file>file:/C:/Wamp/www/WebArenaGroupSI1-CG/app/Model/Player.php</file>
-            <file>file:/C:/Wamp/www/WebArenaGroupSI1-CG/app/Controller/PlayersController.php</file>
-            <file>file:/C:/Wamp/www/WebArenaGroupSI1-CG/app/Model/Fighter.php</file>
-            <file>file:/C:/Wamp/www/WebArenaGroupSI1-CG/app/Controller/ArenaController.php</file>
-            <file>file:/C:/Wamp/www/WebArenaGroupSI1-CG/app/Controller/FightersController.php</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

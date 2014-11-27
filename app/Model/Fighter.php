@@ -8,6 +8,7 @@
   App::uses('Folder', 'Utility');
 App::uses('File', 'Utility');
 App::uses('Surrounding','Model');
+App::uses('Event','Model');
 
 class Fighter extends AppModel{
     
@@ -33,16 +34,13 @@ function position_aleatoire(){
     $resp=$this->getFighter($x,$y);
     $s = new Surrounding();
     $resp2=$s->getSurrounding($x,$y);
-                           
-    }
-    while($resp!=false && $resp2!=false);
+    }while($resp!=false && $resp2!=false);
     $position = array('x'=>$x,'y'=>$y);
     return $position;
 }
 
 
 function go_arena($id){
-    
     do {
     $x=rand(0,14);
     $y=rand(0,9);
@@ -119,23 +117,23 @@ function carroussel_avatar()
                 return false;
             }       
             elseif($element['type']=='monster'){
-                $surrounding->set('coordinate_x', $element['coordinate_x']=20);//a faire en rand
-                $surrounding->set('coordinate_y', $element['coordinate_y']=20);//a faire en rand
+                $position = $this->position_aleatoire();
+                $surrounding->set('coordinate_x', $element['coordinate_x']=$position['x']);
+                $surrounding->set('coordinate_y', $element['coordinate_y']=$position['y']);
                 $this->set('current_health', $datas['Fighter']['current_health']=0);
-                echo "You've been killed by a monster !";// à remplacer par la mort du personnage
             }
             elseif($element['type']=='exit'){
+                $position = $this->position_aleatoire();
                 $this->set('coordinate_x', $datas['Fighter']['coordinate_x']=-1);
                 $this->set('coordinate_y', $datas['Fighter']['coordinate_y']=-1); 
-                $surrounding->set('coordinate_x', $element['coordinate_x']=20);//à faire en rand
-                $surrounding->set('coordinate_y', $element['coordinate_y']=20);//a faire en rand
-                echo "you're out";
+                $surrounding->set('coordinate_x', $element['coordinate_x']=$position['x']);
+                $surrounding->set('coordinate_y', $element['coordinate_y']=$position['y']);
             }
             elseif($element['type']=='trap'){
-                $surrounding->set('coordinate_x', $element['coordinate_x']=20);//a faire en rand
-                $surrounding->set('coordinate_y', $element['coordinate_y']=20);//a faire en rand
+                $position = $this->position_aleatoire();
+                $surrounding->set('coordinate_x', $element['coordinate_x']=$position['x']);//a faire en rand
+                $surrounding->set('coordinate_y', $element['coordinate_y']=$position['y']);//a faire en rand
                 $this->set('current_health', $datas['Fighter']['current_health']=0);
-                echo "You've fallen into a trap !";
             }
         }
         else 
@@ -186,10 +184,11 @@ function carroussel_avatar()
         }
         elseif($element!=false){
             if($element['type']=='element'){
-            $surrounding->set('coordinate_x', $element['coordinate_x']=20);//à faire en rand
-            $surrounding->set('coordinate_y', $element['coordinate_y']=20);
-            $datas['Fighter']['xp']+=1;
-            $surrounding->save($element);
+                $position = $this->position_aleatoire();
+                $surrounding->set('coordinate_x', $element['coordinate_x']=$position['x']);
+                $surrounding->set('coordinate_y', $element['coordinate_y']=$position['y']);
+                $datas['Fighter']['xp']+=1;
+                $surrounding->save($element);
             }
         }
         else

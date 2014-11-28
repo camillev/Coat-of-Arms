@@ -17,7 +17,7 @@
     'Add new fighter',
     array(
         'controller' => 'Fighters',
-        'action' => 'add_perso',
+        'action' => 'addPerso',
         'full_base' => true
     ) 
 ); ?>
@@ -58,7 +58,7 @@ echo "<td>".$bla['Fighter']['current_health'].'/'.$bla['Fighter']['skill_health'
     '',
     array(
         'controller' => 'Fighters',
-        'action' => 'manage_perso/'.$bla['Fighter']['id'],
+        'action' => 'managePerso/'.$bla['Fighter']['id'],
         'full_base' => true
   ),
         array('class'=>"glyphicon glyphicon-edit", 'escape' => false));
@@ -87,9 +87,9 @@ echo "<td>".$bla['Fighter']['current_health'].'/'.$bla['Fighter']['skill_health'
         <h4 class="modal-title" id="myModalLabel">Add a new fighter</h4>
       </div>
       <div class="modal-body">
-       <form method="POST" action="add_perso" class="well form-inline" enctype="multipart/form-data">
+       <form method="POST" action="addPerso" class="well form-inline" enctype="multipart/form-data">
             <input class="form-control" type="text" name="name" value=""  placeholder="Name" />
-            <input class="form-control" type="file" name="data[add_perso][avatar_file]"  placeholder="Image" />
+            <input class="form-control" type="file" name="data[addPerso][avatar_file]"  placeholder="Image" />
             <input class="btn btn-primary" type="submit" name="sub" value="Add"/>
 </form>
     </form>

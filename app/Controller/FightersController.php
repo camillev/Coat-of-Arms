@@ -71,7 +71,7 @@ class FightersController extends AppController {
             unlink(IMAGES.'avatar/'.$id.'.png');
         } 
              
-             $this->Fighter->uploadFile2($this->request->data['addPerso']['avatarFile'],$id);
+             $this->Fighter->uploadFile2($this->request->data['addPerso']['avatar_file'],$id);
               
         $this->redirect(array('action' => 'managePerso/'.$id));
              

@@ -42,7 +42,7 @@
         <?php if ( ($info['xp']-$info['level']*4) >=4)
              {
             
-            $link = "../manage_perso/" . $id;
+            $link = "../managePerso/" . $id;
              ?>
         <form method="POST" action=<?= $link ?> >
          <input class="btn btn-primary" type="submit" name="force" value="+1pts Force"/><br/>
@@ -69,7 +69,7 @@
       </div>
       <div class="modal-body">
         <form method="POST" action=<?= "../update_avatar/" . $id ?> class="well form-inline" enctype="multipart/form-data">
-            <input class="form-control" type="file" name="data[add_perso][avatar_file]"  placeholder="Image" />
+            <input class="form-control" type="file" name="data[addPerso][avatar_file]"  placeholder="Image" />
             <input class="btn btn-primary" type="submit" name="sub" value="Add"/>
     </form>
       </div>

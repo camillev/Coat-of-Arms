@@ -26,7 +26,7 @@ class FightersController extends AppController {
           
           $this->Fighter->delete($id);
           $this->redirect(array("controller" => "Fighters", 
-                          "action" => "liste_perso"));
+                          "action" => "listePerso"));
       }
       
       
@@ -49,7 +49,7 @@ class FightersController extends AppController {
             $name = $this->request->data['name'];   
             $id=$this->Fighter->addPerso($name);
             $this->Session->setFlash('Ajout avec succes'); 
-            $rep = $this->Fighter->uploadFile2($this->request->data['add_perso']['avatar_file'],$id);
+            $rep = $this->Fighter->uploadFile2($this->request->data['addPerso']['avatarFile'],$id);
             if ($rep==false)
             {
                 $this->Session->setFlash('Vous ne pouvez pas envoyer ce type de fichier'); 
@@ -57,7 +57,7 @@ class FightersController extends AppController {
              //$this->response->header('location' , 'liste_perso' );
              //$this->response->send();
                 $this->redirect(array("controller" => "Fighters", 
-                          "action" => "liste_perso"));
+                          "action" => "listePerso"));
         }
         
     }
@@ -71,9 +71,9 @@ class FightersController extends AppController {
             unlink(IMAGES.'avatar/'.$id.'.png');
         } 
              
-             $this->Fighter->uploadFile2($this->request->data['add_perso']['avatar_file'],$id);
+             $this->Fighter->uploadFile2($this->request->data['addPerso']['avatarFile'],$id);
               
-        $this->redirect(array('action' => 'manage_perso/'.$id));
+        $this->redirect(array('action' => 'managePerso/'.$id));
              
         }
     }
@@ -111,7 +111,7 @@ class FightersController extends AppController {
         }
         
         
-        $this->redirect(array('action' => 'manage_perso/'.$id));
+        $this->redirect(array('action' => 'managePerso/'.$id));
         }
         
         

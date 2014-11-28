@@ -41,6 +41,7 @@ function position_aleatoire(){
 
 
 function goArena($id){
+    $event = new Event();
     do {
     $x=rand(0,14);
     $y=rand(0,9);
@@ -49,6 +50,7 @@ function goArena($id){
     while($resp!=false);
         
     $data=array( 'coordinate_x' => $x , 'coordinate_y' => $y, 'id' => $id );
+    $event->createEvent($datas['Fighter']['name']." entered the arena.",$datas['Fighter']['coordinate_x'],$datas['Fighter']['coordinate_y']);
     $this->save($data);
 }
 

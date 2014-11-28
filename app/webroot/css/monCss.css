@@ -7,17 +7,21 @@ and open the template in the editor.
     Created on : 19 nov. 2014, 11:43:33
     Author     : Camille
 */
-
+body{
+    margin : auto;
+    width : 85%;
+    min-width : 1000px;
+}
 footer{
-position:fixed;
-bottom:0;
-left:0;
-height:60px;
-background: black;
- width : 100%;
- color: white;
- text-align : center;
- font-size:10px;
+    position:fixed;
+    bottom:0;
+    left:0;
+    height:60px;
+    background: black;
+    width : 100%;
+    color: white;
+    text-align : center;
+    font-size:10px;
 }
 
 div#myInfos {
@@ -41,28 +45,29 @@ div#evolv {
 
 div#content {
     bottom: 100px;
- 
+
     margin-bottom : 100px;
-   
+
 }
 
 table#arena {
-    //width : 60%;
-    width : 95%;
-    
+    width : 70%;
+    min-width : 600px;
+    //width : 95%;
+
 }
 
 table#arena td {
     width : 40px;
     height : 40px;
     text-align: center;
-    
+
 }
 
 table#pad td {
     width : 30px;
     height : 30px;
-    
+
 }
 
 button#case {

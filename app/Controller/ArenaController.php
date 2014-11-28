@@ -71,8 +71,7 @@ class ArenaController extends AppController
                           "action" => "affichage2d"));
        
     }
-    
-    
+        
     // Fonction globale de deconnexion + Redirection vers home page
     public function deconnexion()
     {
@@ -83,10 +82,7 @@ class ArenaController extends AppController
                           "action" => "home"));
     }
     
-    
-    
-  
-    
+           
     
     public function affichage1d(){
         

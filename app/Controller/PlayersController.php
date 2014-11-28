@@ -58,7 +58,7 @@ class PlayersController extends AppController {
                 
                 
                 $this->redirect(array("controller" => "Arena", 
-            "action" => "home_session"));}
+            "action" => "homeSession"));}
                     
                     
                     
@@ -109,7 +109,7 @@ class PlayersController extends AppController {
                 
                 
                 $this->redirect(array("controller" => "Arena", 
-                          "action" => "home_session"));
+                          "action" => "homeSession"));
             }
             
         }

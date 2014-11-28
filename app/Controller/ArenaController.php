@@ -41,13 +41,13 @@ class ArenaController extends AppController
     
     
     //HOME PAGE COMPTE USER
-    public function home_session()
+    public function homeSession()
     {
          
     }
     
     //
-    public function enter_arena(){
+    public function enterArena(){
         
         if (CakeSession::check('fighter'))
   {
@@ -57,15 +57,15 @@ class ArenaController extends AppController
         
            $idjoueur = CakeSession::read('nom')['id']; 
 
-        $data = $this->Fighter->afficher_fighter($idjoueur);
+        $data = $this->Fighter->afficherFighter($idjoueur);
 
         $this->set('list',$data);
         
     }
     
-    function rand_position($id){
+    function randPosition($id){
         
-        $this->Fighter->go_arena($id);  
+        $this->Fighter->goArena($id);  
         CakeSession::write('fighter',$id);
         $this->redirect(array("controller" => "Arena", 
                           "action" => "affichage2d"));
@@ -103,7 +103,7 @@ class ArenaController extends AppController
     
     
     
-    public function you_re_dead($id_fighter){
+    public function youReDead($id_fighter){
         $dead = $this->Fighter->find('first',array('conditions'=>array('fighter.id'=>$id_fighter,'current_health <=' =>'0')));
          $this->set('dead',$dead['Fighter']);
                 $this->Fighter->delete($dead['Fighter']['id']);
@@ -130,8 +130,8 @@ class ArenaController extends AppController
         
         
         /// Evolution perso
-        $this->set('info', $this->Fighter->info_perso(CakeSession::read('fighter')));
-         if ($this->Fighter->test_avatar(CakeSession::read('fighter'))==1)
+        $this->set('info', $this->Fighter->infoPerso(CakeSession::read('fighter')));
+         if ($this->Fighter->testAvatar(CakeSession::read('fighter'))==1)
         {
             $this->set('img','avatar/'.CakeSession::read('fighter').'.png');
         }
@@ -164,22 +164,22 @@ class ArenaController extends AppController
     
       
     //Page evolution des Fighter
-     public function manage_perso($id) {
+     public function managePerso($id) {
               
         if ($this->request->is('post'))
         {
         
             if ($this->request->data['vue']== TRUE)
             {
-               $this->Fighter->evolution_perso($id, 'vue');
+               $this->Fighter->evolutionPerso($id, 'vue');
             }
         if ($this->request->data['force']==TRUE)
         {
-            $this->Fighter->evolution_perso($id, 'force');
+            $this->Fighter->evolutionPerso($id, 'force');
         }
         if ($this->request->data['vie']==TRUE)
         {
-            $this->Fighter->evolution_perso($id, 'vie');
+            $this->Fighter->evolutionPerso($id, 'vie');
         }
         
         
@@ -208,7 +208,7 @@ class ArenaController extends AppController
     }
   
     
-    function hall_of_fame(){
+    function hallOfFame(){
          //$this->layout='clean'; 
     }
     

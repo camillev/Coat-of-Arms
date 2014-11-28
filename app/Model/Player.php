@@ -23,7 +23,7 @@ class Player extends AppModel{
     }
     
     
-    function find_player($id,$email)
+    function findPlayer($id,$email)
     {
         if ($id==NULL)
         {
@@ -39,13 +39,13 @@ class Player extends AppModel{
         return $inf;
     }
     
-    function update_mdp($id,$pass)
+    function updateMdp($id,$pass)
     {
         $pass=sha1($pass);
         $this->query("UPDATE players SET password = '$pass' WHERE id = '$id' ");
     }
     
-    function add_player($email, $pass)
+    function addPlayer($email, $pass)
     {
         $id = uniqid();
         $pass_hache = sha1($pass);
@@ -90,7 +90,7 @@ class Player extends AppModel{
     }
     }
     
-    function upload_file($file, $id_player){
+    function uploadFile($file, $id_player){
         
         $maxsize=2000000000000000000000000;
         $maxheight=20000000000000000000000;

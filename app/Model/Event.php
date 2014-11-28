@@ -14,21 +14,29 @@ class Event extends AppModel{
 
         
         
-    function get_event($x,$y)
+    function getEvent($x,$y)
     {
         $data = $this->find('first',array('conditions'=>array('coordinate_x'=>$x,'coordinate_y'=>$y)));
-        
         if ($data){
         return $data['Event'];}
         else {return false;}
         
     }
     
+    function createEvent($name, $coordinate_x, $coordinate_y) {
+        $date = new DateTime(date("Y-m-d H:i:s"));
+        $eventData = array('Event' => array(
+            'name' =>$name,
+            'date' => $date->format("Y-m-d H:i:s"),
+            'coordinate_x'=> $coordinate_x,
+            'coordinate_y'=> $coordinate_y));
+        $this->save($eventData);        
+    }
     
      function eventsFill($data)
      {
-         //$id_joueur = CakeSession::read('nom')['id'];
-         $id_fighter = 1;
+         $id_joueur = CakeSession::read('nom')['id'];
+         //$id_fighter = 1;
          $vue_tot=$data['Fighter']['skill_sight'];
          $x=$data['Fighter']['coordinate_x'];
          $y=$data['Fighter']['coordinate_y'];
@@ -41,7 +49,7 @@ class Event extends AppModel{
              for ($j=0;$j<15;$j++)
              {
                  if( (abs($i-$y)+abs($j -$x)) <= $vue_tot){
-                    $donnee = $this->get_event($j,$i);
+                    $donnee = $this->getEvent($j,$i);
                     if ($donnee){
                     $tab[]=array('vue'=> abs($i-$y)+abs($j -$x) , 'data' => $donnee);}
                    
@@ -52,6 +60,5 @@ class Event extends AppModel{
      }
     
 
-    
 }
-    
+     

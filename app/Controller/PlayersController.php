@@ -19,7 +19,7 @@ class PlayersController extends AppController {
      //HOME PAGE
     public function home()
     {
-      $avatar = $this->Fighter->carroussel_avatar();
+      $avatar = $this->Fighter->carrousselAvatar();
      
       $this->set('avatar',$avatar);
     }
@@ -40,7 +40,7 @@ class PlayersController extends AppController {
              
                if (empty($inf))
                {
-                    $this->Player->add_player($email, $pass);
+                    $this->Player->addPlayer($email, $pass);
                     
                     //Mail inscription
                    //$this->Player->mail_inscription($email);
@@ -118,13 +118,13 @@ class PlayersController extends AppController {
     
     
     //Fonction de récupération de mdp
-    function recup_mdp()
+    function recupMdp()
     {
         if ($this->request->is('post'))
         {
             $email = $this->request->data['email'];
             
-            $player = $this->Player->find_player(NULL,$email);
+            $player = $this->Player->findPlayer(NULL,$email);
             
             if ($player)
             {
@@ -159,9 +159,9 @@ class PlayersController extends AppController {
     
     
     //Fonction de nouveau mdp (après perte)
-    function new_mdp($id)
+    function newMdp($id)
     {
-        $result = $this->Player->find_player($id,NULL);
+        $result = $this->Player->findPlayer($id,NULL);
         
         $this->set('id', $id); 
         if ($result)
@@ -171,7 +171,7 @@ class PlayersController extends AppController {
                 $pass2= $this->request->data['pass_confirm'];
                 if (strcmp($pass,$pass2))
                 {
-                    $this->Player->update_mdp($id,$pass);
+                    $this->Player->updateMdp($id,$pass);
                     echo 'modif reussi';
                 }
                 else
@@ -190,7 +190,7 @@ class PlayersController extends AppController {
     }
     
     
-    function hall_of_fame(){
+    function hallOfFame(){
          //$this->layout='clean'; 
     }
     

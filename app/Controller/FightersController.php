@@ -22,7 +22,7 @@ class FightersController extends AppController {
   }
       }
        
-      public function delete_fighter($id){
+      public function deleteFighter($id){
           
           $this->Fighter->delete($id);
           $this->redirect(array("controller" => "Fighters", 
@@ -31,11 +31,11 @@ class FightersController extends AppController {
       
       
        //Page d'accueil de Fighters 
-       public function liste_perso(){
+       public function listePerso(){
            
         $idjoueur = CakeSession::read('nom')['id']; 
 
-        $data = $this->Fighter->afficher_fighter($idjoueur);
+        $data = $this->Fighter->afficherFighter($idjoueur);
 
         $this->set('list',$data);
  
@@ -43,13 +43,13 @@ class FightersController extends AppController {
        }
        
       //Page d'ajout d'un Fighter
-    public function add_perso() {  
+    public function addPerso() {  
         if ($this->request->is('post'))
         {
             $name = $this->request->data['name'];   
-            $id=$this->Fighter->add_perso($name);
+            $id=$this->Fighter->addPerso($name);
             $this->Session->setFlash('Ajout avec succes'); 
-            $rep = $this->Fighter->upload_file2($this->request->data['add_perso']['avatar_file'],$id);
+            $rep = $this->Fighter->uploadFile2($this->request->data['add_perso']['avatar_file'],$id);
             if ($rep==false)
             {
                 $this->Session->setFlash('Vous ne pouvez pas envoyer ce type de fichier'); 
@@ -63,15 +63,15 @@ class FightersController extends AppController {
     }
     
     // FOnction pour modifier ou ajouter un avatar
-    public function update_avatar($id){
+    public function updateAvatar($id){
          if ($this->request->is('post'))
         {
-             if ($this->Fighter->test_avatar($id)==1)
+             if ($this->Fighter->testAvatar($id)==1)
         {
             unlink(IMAGES.'avatar/'.$id.'.png');
         } 
              
-             $this->Fighter->upload_file2($this->request->data['add_perso']['avatar_file'],$id);
+             $this->Fighter->uploadFile2($this->request->data['add_perso']['avatar_file'],$id);
               
         $this->redirect(array('action' => 'manage_perso/'.$id));
              
@@ -81,10 +81,10 @@ class FightersController extends AppController {
     
     
     //Page evolution des Fighter
-     public function manage_perso($id) {
+     public function managePerso($id) {
           
      
-        if ($this->Fighter->test_avatar($id)==1)
+        if ($this->Fighter->testAvatar($id)==1)
         {
             $this->set('img','avatar/'.$id.'.png');
         }
@@ -99,15 +99,15 @@ class FightersController extends AppController {
         
             if ($this->request->data['vue']== TRUE)
             {
-               $this->Fighter->evolution_perso($id, 'vue');
+               $this->Fighter->evolutionPerso($id, 'vue');
             }
         if ($this->request->data['force']==TRUE)
         {
-            $this->Fighter->evolution_perso($id, 'force');
+            $this->Fighter->evolutionPerso($id, 'force');
         }
         if ($this->request->data['vie']==TRUE)
         {
-            $this->Fighter->evolution_perso($id, 'vie');
+            $this->Fighter->evolutionPerso($id, 'vie');
         }
         
         
@@ -115,7 +115,7 @@ class FightersController extends AppController {
         }
         
         
-        $this->set('info', $this->Fighter->info_perso($id));
+        $this->set('info', $this->Fighter->infoPerso($id));
      
         $this->set('id', $id);
         

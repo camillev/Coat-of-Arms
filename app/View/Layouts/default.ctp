@@ -37,7 +37,7 @@
          <?php  if (CakeSession::check('nom'))
               { 
        ?>
-        <a class="navbar-brand" href="../Arena/home_session"><span class="glyphicon glyphicon-home"></span></a>
+        <a class="navbar-brand" href="../Arena/homeSession"><span class="glyphicon glyphicon-home"></span></a>
               <?php
              } else { ?>
         <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span></a>
@@ -62,7 +62,7 @@
     'Characters',
     array(
         'controller' => 'Fighters',
-        'action' => 'liste_perso',
+        'action' => 'listePerso',
         'full_base' => true
     ) 
 ); ?></li>

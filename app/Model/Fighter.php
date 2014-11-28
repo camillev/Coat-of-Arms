@@ -40,7 +40,7 @@ function position_aleatoire(){
 }
 
 
-function go_arena($id){
+function goArena($id){
     do {
     $x=rand(0,14);
     $y=rand(0,9);
@@ -52,7 +52,7 @@ function go_arena($id){
     $this->save($data);
 }
 
-function test_avatar($id)
+function testAvatar($id)
 {
     $dir = new Folder(IMAGES.'avatar');
     $a= $dir->find($id.'.png');
@@ -63,7 +63,7 @@ function test_avatar($id)
            else {return 1;}//full
 }
 
-function carroussel_avatar()
+function carrousselAvatar()
 {
     $dir = new Folder(IMAGES.'avatar');
    return $dir->find('.*\.png');
@@ -96,6 +96,7 @@ function carroussel_avatar()
         $x = $datas['Fighter']['coordinate_x'];
         $y = $datas['Fighter']['coordinate_y'];
         $surrounding = new Surrounding();
+        $event= new Event();
         // use the Model
         if($direction =='north')
             {$y+=1;}
@@ -106,7 +107,6 @@ function carroussel_avatar()
         elseif($direction =='west')
             {$x-=1;}
         $element = $surrounding->getSurrounding($x,$y);
-        pr($element);
         if($this->checkOccupied($x,$y) && $this->checkLimit($x,$y))
         {   
             if($element==false){
@@ -118,12 +118,15 @@ function carroussel_avatar()
             }       
             elseif($element['type']=='monster'){
                 $position = $this->position_aleatoire();
+                $event->createEvent($datas['Fighter']['name']." has been killed by a monster !",$datas['Fighter']['coordinate_x'],$datas['Fighter']['coordinate_y']);
                 $surrounding->set('coordinate_x', $element['coordinate_x']=$position['x']);
                 $surrounding->set('coordinate_y', $element['coordinate_y']=$position['y']);
                 $this->set('current_health', $datas['Fighter']['current_health']=0);
+                
             }
             elseif($element['type']=='exit'){
                 $position = $this->position_aleatoire();
+                $event->createEvent($datas['Fighter']['name']." left the arena.",$datas['Fighter']['coordinate_x'],$datas['Fighter']['coordinate_y']);
                 $this->set('coordinate_x', $datas['Fighter']['coordinate_x']=-1);
                 $this->set('coordinate_y', $datas['Fighter']['coordinate_y']=-1); 
                 $surrounding->set('coordinate_x', $element['coordinate_x']=$position['x']);
@@ -131,8 +134,9 @@ function carroussel_avatar()
             }
             elseif($element['type']=='trap'){
                 $position = $this->position_aleatoire();
-                $surrounding->set('coordinate_x', $element['coordinate_x']=$position['x']);//a faire en rand
-                $surrounding->set('coordinate_y', $element['coordinate_y']=$position['y']);//a faire en rand
+                $event->createEvent($datas['Fighter']['name']." has fallen into a trap !",$datas['Fighter']['coordinate_x'],$datas['Fighter']['coordinate_y']);
+                $surrounding->set('coordinate_x', $element['coordinate_x']=$position['x']);
+                $surrounding->set('coordinate_y', $element['coordinate_y']=$position['y']);
                 $this->set('current_health', $datas['Fighter']['current_health']=0);
             }
         }
@@ -154,6 +158,7 @@ function carroussel_avatar()
         $x = $datas['Fighter']['coordinate_x'];
         $y = $datas['Fighter']['coordinate_y'];
         $surrounding = new Surrounding();
+        $event= new Event();
         if($attack =='north')
             {$y+=1;}
         elseif($attack =='south')
@@ -175,16 +180,20 @@ function carroussel_avatar()
             if($rand>$seuil){
                  $victim['Fighter']['current_health']-=$datas['Fighter']['skill_strength']; 
                  $datas['Fighter']['xp']+=1;
+                 $event->createEvent($datas['Fighter']['name']." attacked ". $victim['Fighter']['name']." for ".$datas['Fighter']['skill_strength']." dammage !",$datas['Fighter']['coordinate_x'],$datas['Fighter']['coordinate_y']);
                  if($victim['Fighter']['current_health']<=0){
                     $datas['Fighter']['xp']+=$victim['Fighter']['level'];
-                    // mort de la victime
+                    $event->createEvent($victim['Fighter']['name']." has been killed by". $datas['Fighter']['name']." !",$datas['Fighter']['coordinate_x'],$datas['Fighter']['coordinate_y']);
                  }
             }
+            else
+                $event->createEvent($datas['Fighter']['name']." attacked ". $victim['Fighter']['name']." but it failed !",$datas['Fighter']['coordinate_x'],$datas['Fighter']['coordinate_y']);
         $this->save($victim);
         }
         elseif($element!=false){
-            if($element['type']=='element'){
+            if($element['type']=='monster'){
                 $position = $this->position_aleatoire();
+                $event->createEvent($datas['Fighter']['name']." killed a monster !",$datas['Fighter']['coordinate_x'],$datas['Fighter']['coordinate_y']);
                 $surrounding->set('coordinate_x', $element['coordinate_x']=$position['x']);
                 $surrounding->set('coordinate_y', $element['coordinate_y']=$position['y']);
                 $datas['Fighter']['xp']+=1;
@@ -253,7 +262,7 @@ function carroussel_avatar()
 
 /// FONCTIONS C
     
-     function info_perso($id_perso)
+     function infoPerso($id_perso)
      {
       
         $inf = $this->query("SELECT * FROM fighters WHERE id = $id_perso");
@@ -261,7 +270,7 @@ function carroussel_avatar()
          return $inf[0]['fighters'];
      }
      
-     function add_perso($name)
+     function addPerso($name)
      {
          $id_joueur = CakeSession::read('nom')['id'];
        
@@ -276,10 +285,10 @@ function carroussel_avatar()
           
      }
      
-     function evolution_perso($id_perso, $skills)
+     function evolutionPerso($id_perso, $skills)
      {
          
-            $perso = $this->info_perso($id_perso);
+            $perso = $this->infoPerso($id_perso);
            
             $vue = $perso['skill_sight']+1;
             $force = $perso['skill_strength']+1;
@@ -318,7 +327,7 @@ function carroussel_avatar()
     
     
     
-    function upload_file2($file,$id)
+    function uploadFile2($file,$id)
     {
         
         
@@ -362,7 +371,7 @@ function carroussel_avatar()
                  if( (abs($i-$y)+abs($j -$x)) <= $vue_tot){
                     $donnee = $this->getFighter($j,$i);
                     if (!empty($donnee)){
-                        if ($this->test_avatar($donnee['id'])==1)
+                        if ($this->testAvatar($donnee['id'])==1)
                         {
                             $avatar = 'avatar/'.$donnee['id'].'.png';
                         }
@@ -392,11 +401,11 @@ function carroussel_avatar()
      
      
      /// FONCTIONS LULU 
-      function afficher_fighter($id){
+      function afficherFighter($id){
 
 $data= $this->find('all', array('conditions'=>array('player_id'=> $id)));
 for ($i=0;$i<count($data);$i++){
-if ($this->test_avatar($data[$i]['Fighter']['id'])==1)
+if ($this->testAvatar($data[$i]['Fighter']['id'])==1)
                         {
                             $avatar = 'avatar/'.$data[$i]['Fighter']['id'].'.png';
                         }
@@ -409,7 +418,7 @@ if ($this->test_avatar($data[$i]['Fighter']['id'])==1)
 return $data;
 }
 
-function check_time(){
+function checkTime(){
     $fighter = $this->find('first', array('conditions'=>array('id'=>CakeSession::read('fighter'))));
     $temps = $fighter['Fighter']['next_action_time'];
     $date_actuelle = new DateTime();

@@ -8,9 +8,9 @@ and open the template in the editor.
     Author     : Camille
 */
 body{
-    margin : auto;
-    width : 85%;
-    min-width : 1000px;
+    background-image: url("../img/background3.png");
+    background-repeat: no-repeat;
+    background-position: center top;
 }
 footer{
     position:fixed;
@@ -45,13 +45,14 @@ div#evolv {
 
 div#content {
     bottom: 100px;
-
-    margin-bottom : 100px;
-
+    min-width : 1200px;
+    width : 1200px;
+    margin: auto;
+    background-color: black;
 }
 
 table#arena {
-    width : 70%;
+    width : 90%;
     min-width : 600px;
     //width : 95%;
 

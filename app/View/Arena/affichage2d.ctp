@@ -8,7 +8,6 @@
 ?>
 <?= $this->Html->script('jquery-1');?>
 <br>
-
 <?= $this->Html->link(
     'Affichage1D',
     array(
@@ -84,110 +83,113 @@
     <div class="col-md-4 col-xs-8">
         <!-- EVOLUTION -->
         <div id="rightPan" class="col-md-12">
-        <div id="infoPerso" class="row">
-            <div class="col-md-12">
-                <div id="namePerso" >
-                    <center><h2><?= $info['name'] ?></h2></center>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div id="avatar" >
-                        <?= $this->Html->image($img, array('alt' => 'CakePHP', 'width' => '70%'));?>
+            <div id="infoPerso" class="row">
+                <div class="col-md-12">
+                    <div id="namePerso" >
+                        <center><h2><?= $info['name'] ?></h2></center>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div id="myInfos">
-                        Level : <?= $info['level'] ?><br/>
-                        Strenght : <?= $info['skill_strength'] ?><br/> 
-                        Sight : <?= $info['skill_sight'] ?><br/> 
-                        Experience : <?= $info['xp'] ?><br/> 
-                        <div class="progress">
-                            <div id="lifeBar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?= $info['current_health'] ?>" aria-valuemin="0" aria-valuemax="<?= $info['skill_health'] ?>" style="width:<?= $info['current_health']/$info['skill_health']*100?>%"> Health : <?= $info['current_health'] ?> / <?= $info['skill_health'] ?></div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="avatar" >
+                        <?= $this->Html->image($img, array('alt' => 'CakePHP', 'width' => '70%'));?>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="myInfos">
+                            Level : <?= $info['level'] ?><br/>
+                            Strenght : <?= $info['skill_strength'] ?><br/> 
+                            Sight : <?= $info['skill_sight'] ?><br/> 
+                            Experience : <?= $info['xp'] ?><br/> 
+                            <div class="progress">
+                                <div id="lifeBar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?= $info['current_health'] ?>" aria-valuemin="0" aria-valuemax="<?= $info['skill_health'] ?>" style="width:<?= $info['current_health']/$info['skill_health']*100?>%"> Health : <?= $info['current_health'] ?> / <?= $info['skill_health'] ?></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+        <?php if ( ($info['xp']-$info['level']*4) >=4)
+             {
+             $link = "managePerso/" . $id;}?>
+                    </div>
+                    <div class="col-md-12 col-xs-12">
+                        <div id="xpAlert">
+           <?php if (($info['xp']-$info['level']*4) <4){ ?>
+                            <div class="alert alert-info" role="alert">You need <?= 4-($info['xp']-$info['level']*4) ?> xp to level up</div>
+        <?php } 
+        else { ?>
+                            <div class="alert alert-success" role="alert"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span> You can up to <?= variant_int(($info['xp']-$info['level']*4)/4) ?> levels
+                                <div id="evolv" class="row" >
+                                    <form method="POST" action=<?= $link ?> >
+                                        <div class="col-md-4"><button class="btn btn-primary btn-xs" type="submit" name="force" value="+1pts Force">Strength <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button></div>
+                                        <input type="hidden" name="id" value=<?= $id ?>  /> 
+                                        <div class="col-md-4"><button class="btn btn-primary btn-xs" type="submit" name="vue" value="+1pts Vue">Sight <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button></div>
+                                        <div class="col-md-4"><button class="btn btn-primary btn-xs" type="submit" name="vie" value="+3pts Vie"/>Health <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button></div>
+                                    </form>
+                                </div>
+                            </div>
+        <?php } ?>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
-        <?php if ( ($info['xp']-$info['level']*4) >=4)
-             {
-            $link = "managePerso/" . $id;
-             ?>
-                    <div id="evolv" >
-                        <form method="POST" action=<?= $link ?> >
-                            <button class="btn btn-primary btn-xs" type="submit" name="force" value="+1pts Force">Strength <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button></br></br>
-                            <input type="hidden" name="id" value=<?= $id ?>  /> 
-                            <button class="btn btn-primary btn-xs" type="submit" name="vue" value="+1pts Vue">Sight <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button></br></br>
-                            <button class="btn btn-primary btn-xs" type="submit" name="vie" value="+3pts Vie"/>Health <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button></br>
-
-
-                        </form>
-                    </div>
-             <?php } ?>
-                </div>
-                <div class="col-md-6">
-                    <div id="xpAlert">
-           <?php if (($info['xp']-$info['level']*4) <4){ ?>
-                        <div class="alert alert-info" role="alert">You need <?= 4-($info['xp']-$info['level']*4) ?> xp to level up</div>
-        <?php } 
-        else { ?>
-                        <div class="alert alert-success" role="alert"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span> You can up to <?= variant_int(($info['xp']-$info['level']*4)/4) ?> levels</div>
-        <?php } ?>
-                    </div>
+                <div id="actionPan"class="col-md-12">
+                    <h5>Actions available : <?=$pts_action ?></h5>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div id="actionPan"class="col-md-12">
-                <center><div class="col-md-6">
-                        <form action="/Coat-of-Arms/Arena/affichage2d" id="FightermoveAffichage2dForm" method="post" accept-charset="utf-8">
-                            <table id="pad"><tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td><button class="btn btn-info" type="submit" name="data[Fightermove][direction]" value="north"><span class="glyphicon glyphicon-circle-arrow-up" aria-hidden="true"></span></button></td>
-                                        <td></td>
+
+            <div class="row">
+                <div id="actionPan"class="col-md-12">
+                    <center><div class="col-md-6">
+                            <form action="/Coat-of-Arms/Arena/affichage2d" id="FightermoveAffichage2dForm" method="post" accept-charset="utf-8">
+                                <table id="pad"><tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td><button class="btn btn-info" type="submit" name="data[Fightermove][direction]" value="north"><span class="glyphicon glyphicon-circle-arrow-up" aria-hidden="true"></span></button></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><button class="btn btn-info"  type="submit" name="data[Fightermove][direction]" value="west"><span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span></button></td>
+                                            <td><center><?= $this->Html->image('step.png', array('alt' => 'CakePHP', 'width' => '70%'));?></center></td>
+                                    <td><button class="btn btn-info"  type="submit" name="data[Fightermove][direction]" value="east"><span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span></button></td>
                                     </tr>
                                     <tr>
-                                        <td><button class="btn btn-info"  type="submit" name="data[Fightermove][direction]" value="west"><span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span></button></td>
-                                        <td><center><?= $this->Html->image('step.png', array('alt' => 'CakePHP', 'width' => '70%'));?></center></td>
-                                <td><button class="btn btn-info"  type="submit" name="data[Fightermove][direction]" value="east"><span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span></button></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><button class="btn btn-info"  type="submit" name="data[Fightermove][direction]" value="south"><span class="glyphicon glyphicon-circle-arrow-down" aria-hidden="true"></span></button></td>
-                                    <td></td>
-                                </tr>
-
-
-                                </tbody></table>
-                        </form>
-                    </div></center>
-                <center><div class="col-md-6">
-                        <form action="/Coat-of-Arms/Arena/affichage2d" id="FighterattackAffichage2dForm" method="post" accept-charset="utf-8">
-                            <table id="pad"><tbody>
-                                    <tr>
                                         <td></td>
-                                        <td><button class="btn btn-danger"  type="submit" name="data[Fighterattack][attack]" value="north"><span class="glyphicon glyphicon-circle-arrow-up" aria-hidden="true"></span></button></td>
+                                        <td><button class="btn btn-info"  type="submit" name="data[Fightermove][direction]" value="south"><span class="glyphicon glyphicon-circle-arrow-down" aria-hidden="true"></span></button></td>
                                         <td></td>
                                     </tr>
+
+
+                                    </tbody></table>
+                            </form>
+                        </div></center>
+                    <center><div class="col-md-6">
+                            <form action="/Coat-of-Arms/Arena/affichage2d" id="FighterattackAffichage2dForm" method="post" accept-charset="utf-8">
+                                <table id="pad"><tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td><button class="btn btn-danger"  type="submit" name="data[Fighterattack][attack]" value="north"><span class="glyphicon glyphicon-circle-arrow-up" aria-hidden="true"></span></button></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><button class="btn btn-danger"  type="submit" name="data[Fighterattack][attack]" value="west"><span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span></button></td>
+                                            <td><center><?= $this->Html->image('swords.png', array('alt' => 'CakePHP', 'width' => '70%'));?></center></td>
+                                    <td><button class="btn btn-danger"  type="submit" name="data[Fighterattack][attack]" value="east"><span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span></button></td>
+                                    </tr>
                                     <tr>
-                                        <td><button class="btn btn-danger"  type="submit" name="data[Fighterattack][attack]" value="west"><span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span></button></td>
-                                        <td><center><?= $this->Html->image('swords.png', array('alt' => 'CakePHP', 'width' => '70%'));?></center></td>
-                                <td><button class="btn btn-danger"  type="submit" name="data[Fighterattack][attack]" value="east"><span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span></button></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><button class="btn btn-danger"  type="submit" name="data[Fighterattack][attack]" value="south"><span class="glyphicon glyphicon-circle-arrow-down" aria-hidden="true"></span></button></td>
-                                    <td></td>
-                                </tr>
+                                        <td></td>
+                                        <td><button class="btn btn-danger"  type="submit" name="data[Fighterattack][attack]" value="south"><span class="glyphicon glyphicon-circle-arrow-down" aria-hidden="true"></span></button></td>
+                                        <td></td>
+                                    </tr>
 
 
-                                </tbody></table></form></div></center>
+                                    </tbody></table></form></div></center>
+
+                </div>
 
             </div>
-
-        </div>
         </div>
     </div>
 </div>

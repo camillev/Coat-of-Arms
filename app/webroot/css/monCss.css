@@ -35,31 +35,56 @@ display#ex{
     height : 100px;
 }
 
+div#namePerso{
+    background : rgba(50,50,50,0.5);
+    border-radius :10px;
+    padding : 15px;
+    text-align : center;
+}
 div#myInfos {
-    background : light-grey;
+    background : rgba(50,50,50,0.5);
+    border-radius :10px;
+    padding : 15px;
+    margin-top : 10px;
+    text-align : center;
+}
+div#avatar{
+    background : rgba(50,50,50,0.5);
+    border-radius :10px;
+    padding : 15px;
+    margin-top : 10px;
+    text-align : center;
+}
+div#arenaPan{
+    background : rgba(50,50,50,0.5);
     border-radius :10px;
     padding : 15px;
     margin-bottom: 10px;
-    margin-top : 20px;
     text-align : center;
 }
-
 
 div#evolv {
-    background : white;
-    //border-radius :10px;
+    background : rgba(50,50,50,0.5);
+    border-radius :10px;
     padding : 15px;
-    margin-bottom: 10px;
-    margin-top : 20px;
+    margin-top : 10px;
+    text-align : center;
+    margin-bottom : 10px;
+}
+div#xpAlert {
+    background : rgba(50,50,50,0.5);
+    border-radius :10px;
+    padding : 15px;
+    margin-top : 10px;
+    margin-bottom : 10px;
     text-align : center;
 }
-
 div#content {
     bottom: 100px;
     min-width : 1200px;
     width : 1200px;
     margin: auto;
-    background-color: rgba(1,1,1,0.1);
+    background-color: rgba(0,0,0,0);
 }
 
 table#arena {
@@ -103,12 +128,29 @@ table#arena tr{
     margin-bottom : 0px;
 }
 
+div#infoPerso{
+    background-color: rgba(0,0,0,0);
+    color : white;
+}
 div#evolution {
     float : right;
     width : 35% ; 
 }
 
+
+
 div#direction {
     float : right;
     width : 35%;
+}
+
+div#rightPan{
+    background-color: rgba(0,0,0,0);
+    padding : 2%;
+}
+
+div#leftPan{
+    background-color: rgba(0,0,0,0);
+    padding : 2%;
+    color : black;
 }

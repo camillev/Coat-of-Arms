@@ -81,9 +81,7 @@ class FightersController extends AppController {
     
     
     //Page evolution des Fighter
-     public function managePerso($id) {
-          
-     
+     public function manage_perso($id) {
         if ($this->Fighter->testAvatar($id)==1)
         {
             $this->set('img','avatar/'.$id.'.png');
@@ -92,34 +90,25 @@ class FightersController extends AppController {
         {
             $this->set('img','blason_def.png');
         }
-     
-        
         if ($this->request->is('post'))
         {
         
             if ($this->request->data['vue']== TRUE)
             {
-               $this->Fighter->evolutionPerso($id, 'vue');
+               $this->Fighter->evolution_perso($id, 'vue');
             }
         if ($this->request->data['force']==TRUE)
         {
-            $this->Fighter->evolutionPerso($id, 'force');
+            $this->Fighter->evolution_perso($id, 'force');
         }
         if ($this->request->data['vie']==TRUE)
         {
-            $this->Fighter->evolutionPerso($id, 'vie');
+            $this->Fighter->evolution_perso($id, 'vie');
         }
         
-        
-        $this->redirect(array('action' => 'managePerso/'.$id));
+        $this->redirect(array('action' => 'manage_perso/'.$id));
         }
-        
-        
-        $this->set('info', $this->Fighter->infoPerso($id));
-     
+        $this->set('info', $this->Fighter->info_perso($id));
         $this->set('id', $id);
-        
-        
-        
     }
 }

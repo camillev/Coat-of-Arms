@@ -160,25 +160,23 @@ class ArenaController extends AppController
     
       
     //Page evolution des Fighter
-     public function managePerso($id) {
+     public function manage_perso($id) {
               
         if ($this->request->is('post'))
         {
         
             if ($this->request->data['vue']== TRUE)
             {
-               $this->Fighter->evolutionPerso($id, 'vue');
+               $this->Fighter->evolution_perso($id, 'vue');
             }
         if ($this->request->data['force']==TRUE)
         {
-            $this->Fighter->evolutionPerso($id, 'force');
+            $this->Fighter->evolution_perso($id, 'force');
         }
         if ($this->request->data['vie']==TRUE)
         {
-            $this->Fighter->evolutionPerso($id, 'vie');
+            $this->Fighter->evolution_perso($id, 'vie');
         }
-        
-        
         $this->redirect(array("controller"=> "Arena",'action' => 'affichage2d'));
         }
         

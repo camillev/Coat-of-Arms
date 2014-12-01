@@ -251,7 +251,7 @@ class Fighter extends AppModel {
         return $this->id;
     }
 
-    function evolutionPerso($id_perso, $skills) {
+    function evolution_perso($id_perso, $skills) {
 
         $perso = $this->infoPerso($id_perso);
 

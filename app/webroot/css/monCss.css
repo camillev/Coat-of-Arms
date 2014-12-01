@@ -27,9 +27,16 @@ footer{
     font-size:10px;
 }
 
+div{
+   // background-color : rgba(150,150,150,0.5);
+}
+
+display#ex{
+    height : 100px;
+}
 
 div#myInfos {
-    background : lightgrey;
+    background : light-grey;
     border-radius :10px;
     padding : 15px;
     margin-bottom: 10px;
@@ -59,9 +66,14 @@ table#arena {
     width : 90%;
     min-width : 600px;
     margin : auto;
-
+    position : center;
 }
-
+#ex{
+    margin : auto;
+    position : center;
+    width : 90%;
+    min-width : 600px;
+}
 table#arena td {
     width : 40px;
     height : 40px;

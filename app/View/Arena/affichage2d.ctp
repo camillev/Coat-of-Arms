@@ -24,68 +24,97 @@
 
     <!-- ARENE -->
     <div class="col-md-8">
-
-        <table id="arena"><tbody>
-            <form method="POST" action="affichage2d" >
+        <div class="row">
+            <table id="arena"><tbody>
+                <form method="POST" action="affichage2d" >
         <?php 
         for($i=9; $i>=0; $i--){?>
             <?php echo"<tr>"; 
             for ($j=0; $j<15; $j++ ){
                 echo "";
                 if($tabArena[$j][$i]['type']=='non_vue'){?>
-                <td><button type="button"  class="btn btn-xs btn-block" id="case" data-toggle="tooltip" width= "2%" data-placement="top" title="Vous ne voyez pas jusque là !"> 
+                    <td><button type="button"  class="btn btn-xs btn-block" id="case" data-toggle="tooltip" width= "2%" data-placement="top" title="Vous ne voyez pas jusque là !"> 
                     <?php echo $this->Html->image('non_vue.png', array('alt'=>'???', 'width'=>'100%','id'=> 'imagecase'))?>
-                    </button></td>
+                        </button></td>
                 <?php echo "";}
                 
                 else if($tabArena[$j][$i]['type']=='fighter'){?>
 
-                <td><button type="button" id="case" class="btn btn-xs btn-block" data-toggle="tooltip" data-placement="top" title="<h4><?php echo $tabArena[$j][$i]['data']['name']?></h4><br>
-                            Level : <?php echo $tabArena[$j][$i]['data']['level']?><br>
-                            Strength : <?php echo $tabArena[$j][$i]['data']['skill_strength']?><br>
-                            Sight : <?php echo $tabArena[$j][$i]['data']['skill_sight']?><br>
-                            Vie : <?php echo $tabArena[$j][$i]['data']['current_health'].'/'.$tabArena[$j][$i]['data']['skill_health']?>"> 
+                    <td><button type="button" id="case" class="btn btn-xs btn-block" data-toggle="tooltip" data-placement="top" title="<h4><?php echo $tabArena[$j][$i]['data']['name']?></h4><br>
+                                Level : <?php echo $tabArena[$j][$i]['data']['level']?><br>
+                                Strength : <?php echo $tabArena[$j][$i]['data']['skill_strength']?><br>
+                                Sight : <?php echo $tabArena[$j][$i]['data']['skill_sight']?><br>
+                                Vie : <?php echo $tabArena[$j][$i]['data']['current_health'].'/'.$tabArena[$j][$i]['data']['skill_health']?>"> 
                     <?php echo $this->Html->image('fighter.png', array('alt'=>'???', 'width'=>'100%', 'id'=> 'imagecase'))?> 
-                    </button></td>
+                        </button></td>
                  <?php echo "";}
                  
                  
                 else if($tabArena[$j][$i]['type']=='me'){?>
-                <td><button type="button" id="case" class="btn btn-xs btn-block"  data-toggle="tooltip" data-placement="top" title="<?php echo $tabArena[$j][$i]['state']?>"> 
+                    <td><button type="button" id="case" class="btn btn-xs btn-block"  data-toggle="tooltip" data-placement="top" title="<?php echo $tabArena[$j][$i]['state']?>"> 
                     <?php echo $this->Html->image('me.png', array('alt'=>'???', 'width'=>'100%','id'=> 'imagecase'))?> 
-                    </button></td>
+                        </button></td>
                  <?php echo "";}
                  
                  
                 else if ($tabArena[$j][$i]['type']=='vide'){ 
                     ?>
-                <td><button type="button"  id="case" class="btn btn-xs btn-block" data-toggle="tooltip" data-placement="top" title="Il n'y a rien ici !"> 
+                    <td><button type="button"  id="case" class="btn btn-xs btn-block" data-toggle="tooltip" data-placement="top" title="Il n'y a rien ici !"> 
                      <?php echo $this->Html->image('herbe.jpg', array('alt'=>'???', 'width'=>'100%','id'=> 'imagecase'))?>
-                    </button></td>   
+                        </button></td>   
                       <?php echo "";}
                  
                  
                 else if ($tabArena[$j][$i]['type']=='surrounding'){ 
                     ?>
-                <td><button type="button"  id="case" class="btn btn-xs btn-block" data-toggle="tooltip" data-placement="top" title="<?= $tabArena[$j][$i]['data']['type']?> ">
+                    <td><button type="button"  id="case" class="btn btn-xs btn-block" data-toggle="tooltip" data-placement="top" title="<?= $tabArena[$j][$i]['data']['type']?> ">
                      <?php echo $this->Html->image($tabArena[$j][$i]['data']['type'].'.png', array('alt'=>'???', 'width'=>'100%','id'=> 'imagecase'))?>
-                    </button></td> 
+                        </button></td> 
 
             <?php echo "";}}?>
-                <!--<br>-->
+                    <!--<br>-->
         <?php echo "</tr>";}?>
-            </form>
-            </tbody></table>
+                </form>
+                </tbody></table>
+        </div>
+        <div class="row">
+            <table id="ex" class="table" accept-charset="utf-8">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Distance de moi</th>
 
+                    </tr>
+                </thead>
+                <tbody>
+    <?php
+    if(!empty($tab)){
+    foreach ($tab as $value){
+    ?>
+                    <tr>
+                        <td><?=$value['data']['date']?></td>
+                        <td><?=$value['data']['name']?></td>
+                        <td>(<?=$value['data']['coordinate_x']?>,<?=$value['data']['coordinate_y']?>)</td>
+                        <td><?=$value['vue']?></td>
+
+                    </tr>
+
+    <?php }} ?>
+                </tbody>
+            </table>
+
+        </div>   
     </div>
+
 
     <!-- PARTIE SUR LE COTE -->
     <div class="col-md-3">
         <!-- EVOLUTION -->
         <div class="row">
             <div class="row">
-
-                <div class="col-xs-4">
+                <div class="col-xs-6">
                     <center><h2><?= $info['name'] ?></h2><br/>
 
 
@@ -107,6 +136,8 @@
 
 
                 </div>
+            </div>
+            <div class="row">
                 <div class="col-xs-3">
         <?php if ( ($info['xp']-$info['level']*4) >=4)
              {
@@ -137,96 +168,70 @@
             </div>
         </div>
         <div class="row">
-            <table id="ex" class="display" accept-charset="utf-8">
-                <thead>
-                    <tr>
-                        <th>Distance de moi</th>
-                        <th>Name</th>
-                        <th>Date</th>
-                        <th>Position</th>
+            <div class="col-md-6">
+                <form action="/Coat-of-Arms/Arena/affichage2d" id="FightermoveAffichage2dForm" method="post" accept-charset="utf-8">
+                    <table id="pad"><tbody>
+                            <tr>
+                                <td></td>
+                                <td><input class="btn" type="submit" name="data[Fightermove][direction]" value="north"></input></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><input class="btn"  type="submit" name="data[Fightermove][direction]" value="west"></input></td>
+                                <td>Move</td>
+                                <td><input class="btn"  type="submit" name="data[Fightermove][direction]" value="east"></input></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><input class="btn"  type="submit" name="data[Fightermove][direction]" value="south"></input></td>
+                                <td></td>
+                            </tr>
 
-                    </tr>
-                </thead>
-                <tbody>
-    <?php
-    if(!empty($tab)){
-    foreach ($tab as $value){
-    ?>
-                    <tr>
-                        <td><?=$value['vue']?></td>
-                        <td><?=$value['data']['name']?></td>
-                        <td><?=$value['data']['date']?></td>
-                        <td>(<?=$value['data']['coordinate_x']?>,<?=$value['data']['coordinate_y']?>)</td>
 
-                    </tr>
+                        </tbody></table>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form action="/Coat-of-Arms/Arena/affichage2d" id="FighterattackAffichage2dForm" method="post" accept-charset="utf-8">
+                    <table id="pad"><tbody>
+                            <tr>
+                                <td></td>
+                                <td><input class="btn"  type="submit" name="data[Fighterattack][attack]" value="north"></input></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><input class="btn"  type="submit" name="data[Fighterattack][attack]" value="west"></input></td>
+                                <td>Attack</td>
+                                <td><input class="btn"  type="submit" name="data[Fighterattack][attack]" value="east"></input></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><input class="btn"  type="submit" name="data[Fighterattack][attack]" value="south"></input></td>
+                                <td></td>
+                            </tr>
 
-    <?php }} ?>
-                </tbody>
-            </table>
 
-        </div>    
-
+                        </tbody></table></form></div>
+        </div>
     </div>
 </div>
 
 
  <?php
-echo $this->Form->create('Fightermove');
-echo $this->Form->input('direction',array('options' => array('north'=>'north','east'=>'east','south'=>'south','west'=>'west'), 'default' => 'east'));
-echo $this->Form->end('Move');
+$this->Form->create('Fightermove');
+$this->Form->input('direction',array('options' => array('north'=>'north','east'=>'east','south'=>'south','west'=>'west'), 'default' => 'east'));
+$this->Form->end('Move');
 ?>
 <?php
-echo $this->Form->create('Fighterattack');
-echo $this->Form->input('attack',array('options' => array('north'=>'north','east'=>'east','south'=>'south','west'=>'west'), 'default' => 'east'));
-echo $this->Form->end('Attack');
+$this->Form->create('Fighterattack');
+$this->Form->input('attack',array('options' => array('north'=>'north','east'=>'east','south'=>'south','west'=>'west'), 'default' => 'east'));
+$this->Form->end('Attack');
 ?>
 
 
-<div class="col-md-6">
-    <form action="/Coat-of-Arms/Arena/affichage2d" id="FightermoveAffichage2dForm" method="post" accept-charset="utf-8">
-        <table id="pad"><tbody>
-                <tr>
-                    <td></td>
-                    <td><input class="btn" type="submit" name="data[Fightermove][direction]" value="north"></input></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><input class="btn"  type="submit" name="data[Fightermove][direction]" value="west"></input></td>
-                    <td>Move</td>
-                    <td><input class="btn"  type="submit" name="data[Fightermove][direction]" value="east"></input></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><input class="btn"  type="submit" name="data[Fightermove][direction]" value="south"></input></td>
-                    <td></td>
-                </tr>
 
-
-            </tbody></table>
-    </form>
-</div>
-
-<div class="col-md-6">
-    <form action="/Coat-of-Arms/Arena/affichage2d" id="FighterattackAffichage2dForm" method="post" accept-charset="utf-8">
-        <table id="pad"><tbody>
-                <tr>
-                    <td></td>
-                    <td><input class="btn"  type="submit" name="data[Fighterattack][attack]" value="north"></input></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><input class="btn"  type="submit" name="data[Fighterattack][attack]" value="west"></input></td>
-                    <td>Attack</td>
-                    <td><input class="btn"  type="submit" name="data[Fighterattack][attack]" value="east"></input></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><input class="btn"  type="submit" name="data[Fighterattack][attack]" value="south"></input></td>
-                    <td></td>
-                </tr>
-
-
-            </tbody></table></form></div>
 
 <script>$(function () {
         $('[data-toggle="tooltip"]').tooltip({html: true})

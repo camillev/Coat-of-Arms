@@ -19,6 +19,9 @@
 ); ?>
 <br>
 
+<?= "Nb de pts d'action : ".$pts_action ?>
+<br>
+
 <div class="row">
 
 

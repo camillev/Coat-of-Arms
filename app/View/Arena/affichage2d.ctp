@@ -112,7 +112,7 @@
                 <div class="col-md-6">
         <?php if ( ($info['xp']-$info['level']*4) >=4)
              {
-            $link = "manage_perso/" . $id;
+            $link = "managePerso/" . $id;
              ?>
                     <div id="evolv" >
                         <form method="POST" action=<?= $link ?> >

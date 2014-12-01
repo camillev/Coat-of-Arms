@@ -45,7 +45,7 @@ echo "<td>".$bla['Fighter']['current_health'].'/'.$bla['Fighter']['skill_health'
     'Go in the Arena',
     array(
         'controller' => 'Arena',
-        'action' => 'rand_position/'.$bla['Fighter']['id'],
+        'action' => 'randPosition/'.$bla['Fighter']['id'],
         'full_base' => true
     ) );
 ?></td>

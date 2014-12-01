@@ -3,15 +3,42 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Pages/home.ctp</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/Controller/ArenaController.php</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Players/connexion.ctp</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/Model/Fighter.php</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/Controller/AppController.php</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Players/new_mdp.ctp</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Fighters/liste_perso.ctp</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Players/hall_of_fame.ctp</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Arena/you_re_dead.ctp</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Layouts/default.ctp</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Players/recup_mdp.ctp</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/Model/Surrounding.php</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/Model/Event.php</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Fighters/update_avatar.ctp</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Fighters/manage_perso.ctp</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/Model/Player.php</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Arena/sight.ctp</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Arena/affichage1d.ctp</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Players/inscription.ctp</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Fighters/add_perso.ctp</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Fighters/delete_fighter.ctp</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/Config/database.php</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Arena/diary.ctp</file>
             <file>file:/C:/wamp/www/Coat-of-Arms/app/Controller/FightersController.php</file>
             <file>file:/C:/wamp/www/Coat-of-Arms/app/webroot/css/monCss.css</file>
-            <file>file:/C:/wamp/www/Coat-of-Arms/app/Controller/ArenaController.php</file>
-            <file>file:/C:/wamp/www/Coat-of-Arms/app/Model/Fighter.php</file>
             <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Arena/affichage2d.ctp</file>
-            <file>file:/C:/wamp/www/Coat-of-Arms/app/Controller/AppController.php</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/Model/AppModel.php</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Players/home.ctp</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Players/google.ctp</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/Controller/PagesController.php</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Arena/enter_arena.ctp</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Arena/rand_position.ctp</file>
             <file>file:/C:/wamp/www/Coat-of-Arms/app/Controller/PlayersController.php</file>
             <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Arena/manage_perso.ctp</file>
-            <file>file:/C:/wamp/www/Coat-of-Arms/app/Controller/PagesController.php</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Arena/home_session.ctp</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Arena/deconnexion.ctp</file>
         </group>
     </open-files>
 </project-private>

@@ -39,9 +39,9 @@ class Fighter extends AppModel {
             $y = rand(0, 9);
             $resp = $this->getFighter($x, $y);
         } while ($resp != false);
-
         $data = array('coordinate_x' => $x, 'coordinate_y' => $y, 'id' => $id);
-        $event->createEvent($datas['Fighter']['name'] . " entered the arena.", $datas['Fighter']['coordinate_x'], $datas['Fighter']['coordinate_y']);
+        $fighter = $this->findById($id);
+        $event->createEvent($fighter['Fighter']['name']." entered the arena.", $x, $y);
         $this->save($data);
     }
 

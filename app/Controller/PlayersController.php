@@ -94,7 +94,7 @@ class PlayersController extends AppController {
     //Fonction de connexion
     function connexion(){
         
-         $this->google();
+         //$this->google();
         if ($this->request->is('post'))
         {
             $email = $this->request->data['email'];

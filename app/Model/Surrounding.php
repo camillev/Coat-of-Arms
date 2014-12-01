@@ -32,14 +32,14 @@ class Surrounding extends AppModel{
          else {return false;}
      }
      function getDanger($x,$y){
-         $dataMonster = $this->query("Select * from surroundings where (coordinate_x=$x+1 AND coordinate_y=$y) "
+         $dataMonster = $this->query("Select * from surroundings where type = 'monster' AND ((coordinate_x=$x+1 AND coordinate_y=$y) "
                  . "OR(coordinate_x=$x-1 AND coordinate_y=$y) "
                  . "OR (coordinate_x=$x AND coordinate_y=$y+1) "
-                 . "OR (coordinate_x=$x AND coordinate_y=$y-1) AND type = 'monster'");
-         $dataTrap = $this->query("Select * from surroundings where (coordinate_x=$x+1 AND coordinate_y=$y) "
+                 . "OR (coordinate_x=$x AND coordinate_y=$y-1))");
+         $dataTrap = $this->query("Select * from surroundings where type = 'trap' AND ((coordinate_x=$x+1 AND coordinate_y=$y) "
                  . "OR(coordinate_x=$x-1 AND coordinate_y=$y) "
                  . "OR (coordinate_x=$x AND coordinate_y=$y+1) "
-                 . "OR (coordinate_x=$x AND coordinate_y=$y-1) AND type = 'trap'");
+                 . "OR (coordinate_x=$x AND coordinate_y=$y-1)) ");
          if($dataMonster){
              return "You smell something ...";
          }

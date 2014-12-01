@@ -8,9 +8,12 @@ and open the template in the editor.
     Author     : Camille
 */
 body{
-    background-image: url("../img/background3.png");
+    background-image: url("../img/back2.png");
     background-repeat: no-repeat;
-    background-position: center top;
+    background-position: center center;
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-size: cover; 
 }
 footer{
     position:fixed;
@@ -23,6 +26,7 @@ footer{
     text-align : center;
     font-size:10px;
 }
+
 
 div#myInfos {
     background : lightgrey;
@@ -48,13 +52,13 @@ div#content {
     min-width : 1200px;
     width : 1200px;
     margin: auto;
-    background-color: black;
+    background-color: rgba(1,1,1,0.1);
 }
 
 table#arena {
     width : 90%;
     min-width : 600px;
-    //width : 95%;
+    margin : auto;
 
 }
 

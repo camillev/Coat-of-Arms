@@ -96,7 +96,7 @@
                 </div>
 
 
-                <div class="col-xs-4">
+                <div class="col-xs-6">
                     <div id="myInfos">
                         niveau : <?= $info['level'] ?><br/>
                         force : <?= $info['skill_strength'] ?><br/> 

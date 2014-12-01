@@ -171,7 +171,6 @@ function carrousselAvatar()
             {$x-=1;}
             
         $element = $surrounding->getSurrounding($x,$y);
-        pr($element); 
         
         if($this->getFighter($x,$y)  && $element==false)
         {

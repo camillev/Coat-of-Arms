@@ -161,6 +161,8 @@ class Fighter extends AppModel {
                 $event->createEvent($datas['Fighter']['name'] . " attacked " . $victim['Fighter']['name'] . " for " . $datas['Fighter']['skill_strength'] . " dammage !", $datas['Fighter']['coordinate_x'], $datas['Fighter']['coordinate_y']);
                 if ($victim['Fighter']['current_health'] <= 0) {
                     $datas['Fighter']['xp']+=$victim['Fighter']['level'];
+                    $victim['Fighter']['coordinate_x']=-1;
+                    $victim['Fighter']['coordinate_y']=-1;
                     $event->createEvent($victim['Fighter']['name'] . " has been killed by" . $datas['Fighter']['name'] . " !", $datas['Fighter']['coordinate_x'], $datas['Fighter']['coordinate_y']);
                 }
                 $this->save($victim);

@@ -6,6 +6,8 @@
  * and open the template in the editor.
  */
 
+App::uses('SimplePasswordHasher', 'Controller/Component/Auth');
+
 
 class PlayersController extends AppController {
     public $helpers = array('Html', 'Form');
@@ -125,17 +127,21 @@ class PlayersController extends AppController {
             $email = $this->request->data['email'];
             
             $player = $this->Player->findPlayer(NULL,$email);
-            
+           
             if ($player)
             {
                 //Joueur ds la BDD
                 $id = $player[0]['players']['id'];
+                 $pass = $player[0]['players']['password'];
+                     $passwordHasher = new SimplePasswordHasher(array('hashType' => 'sha256')); 
+                 $pass = $passwordHasher->hash( $pass);
+                 
                 //Envoyer mail avec lien avec id
                   App::uses('CakeEmail', 'Network/Email');
    
          $Email = new CakeEmail();
          $Email->config('gmail');
-       $Email->viewVars(array('id' => $id));
+       $Email->viewVars(array('id' => $id,'email'=>$email,'pass'=> $pass));
         $Email->template('recup_mdp', NULL)
                 ->emailFormat('html')
                 ->to($email)
@@ -159,17 +165,61 @@ class PlayersController extends AppController {
     
     
     //Fonction de nouveau mdp (après perte)
-    function newMdp($id)
+    function newMdp($email,$pass_b1)
     {
-        $result = $this->Player->findPlayer($id,NULL);
+        //$result = $this->Player->findPlayer($id,NULL);
+        $result = $this->Player->find('first',array('conditions'=>array('email'=>$email)));
         
+        $this->set('email',$email);
+        $this->set('pass',$pass_b1);
+        
+        //echo $email;
+        //echo $pass_b1;
+        
+        if (!empty($result)){
+            
+            $passwordHasher = new SimplePasswordHasher(array('hashType' => 'sha256')); 
+             $pass_b = $passwordHasher->hash( $result['Player']['password']);
+             $id= $result['Player']['id'];
+             if ($pass_b == $pass_b1){
+                 echo "Je suis bien la!";
+                 if ($this->request->is('post')){
+                $pass = $this->request->data['pass'];
+                $pass2= $this->request->data['pass_confirm'];
+                echo $pass.' '.$pass2;
+                if ($pass==$pass2)
+                {
+                    $this->Player->updateMdp($id,$pass);
+                    echo 'modif reussi';
+                     $this->redirect(array("controller" => "Players", 
+                          "action" => "home"));
+                    
+                    
+                }
+                else
+                {
+                echo 'erreur mdp diferent';    
+                //MDP DIFFERENT
+                }
+            }
+      
+             }
+             else {echo "ERREUR mdp";
+        }}
+        else {
+            echo "Cet utilisateur n'existe pas";
+        }
+        
+        
+        /*
         $this->set('id', $id); 
         if ($result)
         {
             if ($this->request->is('post')){
                 $pass = $this->request->data['pass'];
                 $pass2= $this->request->data['pass_confirm'];
-                if (strcmp($pass,$pass2))
+                echo $pass.' '.$pass2;
+                if ($pass==$pass2)
                 {
                     $this->Player->updateMdp($id,$pass);
                     echo 'modif reussi';
@@ -186,7 +236,7 @@ class PlayersController extends AppController {
             //retour page d'accueil
             echo 'erreur';
         }
-        
+        */
     }
     
     

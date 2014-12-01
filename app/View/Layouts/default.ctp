@@ -118,35 +118,64 @@
                                     </button>
 
              <?php } ?>
-
-                                </div>
-
-                            </li>
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
-            </nav>
+              
+    <div class="span8"><div class="page header">
+           <a href="<?php echo $this->Html->url(array('controller' => 'Players','action'=>'facebook'));?>" class="facebookConnect"> Connect with Facebook</a> 
         </div>
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js">
+            </script>
+            <?php echo $this->Html->script('facebook'); ?>
+            
+           
+            <script>
+            FB.Event.subscribe("auth.login", function () {
+                $this->redirect(array('controller' => 'Players','action'=>'home'));
+            });
+             </script>
+             
+            
+        <div id="fb-root"></div>
+              
+        </div>
+              
+     <?php echo $this->Html->script('google'); ?>   
+       
+    <?php if(isset($me)) { ?>
+        <a href="?logout" ><h5>Logout</h5></a>
+    <?php } else { ?>	
+      <div id="signin-button" class="show">
+        <a href="<?php echo($authUrl); ?>" ><h5>COnnect with Google+</h5></a>
+    <?php } ?>
+       </div>
 
-        <!--<div class="alert alert-info" role="alert">   <= $this->Session->flash(); ?></div>
-        -->
+            
+          </div>
+       
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+    
 
-        <!-- Modal -->
-        <!--
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-        </div>
-        <div class="modal-body">
-         <= $this->Session->flash(); ?>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+      <!--<div class="alert alert-info" role="alert">   <= $this->Session->flash(); ?></div>
+  -->
+   
+      <!-- Modal -->
+      <!--
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+       <= $this->Session->flash(); ?>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>-->

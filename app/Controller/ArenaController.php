@@ -115,6 +115,8 @@ class ArenaController extends AppController
                           "action" => "enter_arena"));
     }
     
+
+    
              if ($this->request->is('post')) {
             if (isset($this->request->data["Fightermove"])){
             $this->Fighter->doMove(CakeSession::read('fighter'), $this->request->data['Fightermove']['direction']);}
@@ -153,6 +155,9 @@ class ArenaController extends AppController
                  $this->redirect(array("controller" => "Arena", 
                           "action" => "you_re_dead/".$id_fighter));
           }
+          
+              //Pts d'actions
+    $this->set('pts_action',$this->Fighter->ptsAction());
          
         
     }

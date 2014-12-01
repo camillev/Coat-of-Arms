@@ -112,7 +112,7 @@
         <h4 class="modal-title" id="myModalLabel">Mot de passe oublié ?</h4>
       </div>
       <div class="modal-body">
-  <form method="POST" action="recup_mdp" class="well form-inline">
+  <form method="POST" action="recupMdp" class="well form-inline">
                   <input class="form-control" type="email" name="email" value="" id="pseudo" placeholder="Username" />           
             <input class="btn btn-primary" type="submit" name="sub" value="Envoyer un mail"/>
               </form>

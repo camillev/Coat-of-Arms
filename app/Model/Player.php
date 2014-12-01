@@ -5,6 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+App::uses('SimplePasswordHasher', 'Controller/Component/Auth');
 
 class Player extends AppModel{
     
@@ -27,7 +28,7 @@ class Player extends AppModel{
     {
         if ($id==NULL)
         {
-            $email="true'; TRUNCATE TAL+BLE";
+            
             $inf = $this->query("SELECT * FROM players WHERE email = '$email' ");
         }
         
@@ -41,14 +42,18 @@ class Player extends AppModel{
     
     function updateMdp($id,$pass)
     {
-        $pass=sha1($pass);
+        //$pass=sha1($pass);
+        $passwordHasher = new SimplePasswordHasher(array('hashType' => 'sha256')); 
+        $pass = $passwordHasher->hash( $pass);
         $this->query("UPDATE players SET password = '$pass' WHERE id = '$id' ");
     }
     
     function addPlayer($email, $pass)
     {
         $id = uniqid();
-        $pass_hache = sha1($pass);
+        //$pass_hache = sha1($pass);
+         $passwordHasher = new SimplePasswordHasher(array('hashType' => 'sha256')); 
+        $pass_hache = $passwordHasher->hash( $pass);
         $this->query(" INSERT INTO players (id, email, password) VALUES ('$id','$email','$pass_hache')");
         return $id;
     }
@@ -57,8 +62,9 @@ class Player extends AppModel{
     {
         
         //$pass_hache = sha1($_POST['pass']); //Récupere le mot de passe et le hache
-        $pass_hache = sha1($pass);
-
+        //$pass_hache = sha1($pass);
+ $passwordHasher = new SimplePasswordHasher(array('hashType' => 'sha256')); 
+        $pass_hache = $passwordHasher->hash( $pass);
         // Vérification des identifiants
         //$play = $this->query("SELECT id FROM players WHERE email = '$email' AND password = '$pass_hache' ");
       

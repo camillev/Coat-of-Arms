@@ -1,8 +1,11 @@
-<?php
+     
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+<script src="https://apis.google.com/js/plusone.js" type="text/javascript"></script>
+     <?php echo $this->Html->script('google'); ?>   
+       
+    <?php if(isset($me)) { ?>
+        <a href="?logout" ><h5>Logout</h5></a>
+    <?php } else { ?>	
+      <div id="signin-button" class="show">
+        <a href="<?php echo($authUrl); ?>" ><h5>Cnnect with Google+</h5></a>
+    <?php } ?>

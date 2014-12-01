@@ -17,7 +17,7 @@
     'Change your mdp',
     array(
         'controller' => 'players',
-        'action' => 'new_mdp/'.$id,
+        'action' => 'newMdp/'.$email.'/'.$pass,
         'full_base' => true
     ) 
 ); ?>

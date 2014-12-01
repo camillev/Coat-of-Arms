@@ -118,6 +118,36 @@
       </button>
               
              <?php } ?>
+              
+    <div class="span8"><div class="page header">
+           <a href="<?php echo $this->Html->url(array('controller' => 'Players','action'=>'facebook'));?>" class="facebookConnect"> Connect with Facebook</a> 
+        </div>
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js">
+            </script>
+            <?php echo $this->Html->script('facebook'); ?>
+            
+           
+            <script>
+            FB.Event.subscribe("auth.login", function () {
+                $this->redirect(array('controller' => 'Players','action'=>'home'));
+            });
+             </script>
+             
+            
+        <div id="fb-root"></div>
+              
+        </div>
+              
+     <?php echo $this->Html->script('google'); ?>   
+       
+    <?php if(isset($me)) { ?>
+        <a href="?logout" ><h5>Logout</h5></a>
+    <?php } else { ?>	
+      <div id="signin-button" class="show">
+        <a href="<?php echo($authUrl); ?>" ><h5>COnnect with Google+</h5></a>
+    <?php } ?>
+       </div>
+
             
           </div>
        

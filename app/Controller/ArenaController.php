@@ -43,7 +43,10 @@ class ArenaController extends AppController
     //HOME PAGE COMPTE USER
     public function homeSession()
     {
-         
+      $avatar = $this->Fighter->carrousselAvatar();
+     
+      $this->set('avatar',$avatar);
+    
     }
     
     //

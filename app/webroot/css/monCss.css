@@ -112,3 +112,19 @@ div#direction {
     float : right;
     width : 35%;
 }
+
+
+div.home{
+    margin-top: 3%;
+    margin-bottom: 6%;
+}
+
+p{
+    color:white;
+}
+
+h1{
+    color:white;
+    font-family: Calibri;
+    text-align: center;
+}

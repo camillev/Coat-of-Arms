@@ -1,12 +1,16 @@
-<?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-echo "Your fighter ".$dead['name']." is dead!!";
+
+<div class="home">
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6" >       <?= $this->Html->image( 'dead.png', array('alt' => 'CakePHP','width'=>'100%')); ?></div>
+</div>
+</div>
+
+<div class="home">
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6" >  <center> <?php
+
 echo $this->Html->link(
     'Retour au jeu',
     array(
@@ -14,7 +18,8 @@ echo $this->Html->link(
         'action' => 'affichage2d',
         'full_base' => true
     ) 
-); 
-
+        );  ?> </center></div>
+</div>
+</div>
 
 

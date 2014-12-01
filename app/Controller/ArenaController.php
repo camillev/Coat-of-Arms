@@ -115,8 +115,7 @@ class ArenaController extends AppController
                           "action" => "enter_arena"));
     }
     
-    //Pts d'actions
-    $this->set('pts_action',$this->Fighter->ptsAction());
+
     
              if ($this->request->is('post')) {
             if (isset($this->request->data["Fightermove"])){
@@ -156,6 +155,9 @@ class ArenaController extends AppController
                  $this->redirect(array("controller" => "Arena", 
                           "action" => "you_re_dead/".$id_fighter));
           }
+          
+              //Pts d'actions
+    $this->set('pts_action',$this->Fighter->ptsAction());
          
         
     }

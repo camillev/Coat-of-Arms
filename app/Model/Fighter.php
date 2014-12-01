@@ -80,6 +80,7 @@ class Fighter extends AppModel {
     }
 
     function doMove($fighterId, $direction) {
+        if ($this->checkTime()){
         //récupérer la position et fixer l'id de travail
         $datas = $this->find('first', array('conditions' => array('Fighter.id' => $fighterId)));
         $x = $datas['Fighter']['coordinate_x'];
@@ -129,9 +130,12 @@ class Fighter extends AppModel {
         $this->save($datas);
         $surrounding->save($element);
         return true;
+        }
     }
 
     function doAttack($fighterId, $attack) {
+        
+        if ($this->checkTime()){
         //récupérer la position et fixer l'id de travail
         $datas = $this->find('first', array('conditions' => array('Fighter.id' => $fighterId)));
         $x = $datas['Fighter']['coordinate_x'];
@@ -183,6 +187,7 @@ class Fighter extends AppModel {
         //sauver la modif
         $this->save($datas);
         return true;
+        }
     }
 
     function arenaFill() {
@@ -363,33 +368,77 @@ class Fighter extends AppModel {
         $date_actuelle = new DateTime();
         $temps_actuel = $date_actuelle->format('y-m-d H:i:s');
         $max_action = 3;
-        $temps_action = 10;
-        if (($temps_actuel - $temps) >= ($max_action * $temps_action)){
+        $temps_action = 10; //en secondes
+        
+        $temps = new DateTime($temps);
+        
+        $diff = $date_actuelle->diff($temps);
+        $diff_sec = (int) $diff->format('%s')  
+               + (int) $diff->format('%i') *60
+               + (int) $diff->format('%H') *60*60
+               + (int) $diff->format('%d') *24*60*60
+               + (int) $diff->format('%m') *30*60*60
+               + (int) $diff->format('%y') *31536000;
+        
+        
+    
+        echo $diff_sec;
+        
+        if ($diff->invert == 1){
+        if ($diff_sec >= ($max_action * $temps_action)){
             return $max_action;
         }
         else {
-            return variant_int(($temps_actuel - $temps)/$temps_action);
+            return variant_int($diff_sec/$temps_action);
         }
+        }
+        else {
+            echo 'pas de pts!';
+            return 0;
+        }
+         
     }
         
     
     
     function checkTime() {
-        $fighter = $this->find('first', array('conditions' => array('id' => CakeSession::read('fighter'))));
+        $fighter = $this->find('first', array('conditions' => array('fighter.id' => CakeSession::read('fighter'))));
         $temps = $fighter['Fighter']['next_action_time'];
         $date_actuelle = new DateTime();
         $temps_actuel = $date_actuelle->format('y-m-d H:i:s');
         $max_action = 3;
-        $temps_action = 10;
+        $temps_action = 10; //en secondes
+        
+                $temps = new DateTime($temps);
+        
+        $diff = $date_actuelle->diff($temps);
+        $diff_sec = (int) $diff->format('%s')  
+               + (int) $diff->format('%i') *60
+               + (int) $diff->format('%H') *60*60
+               + (int) $diff->format('%d') *24*60*60
+               + (int) $diff->format('%m') *30*60*60
+               + (int) $diff->format('%y') *31536000;
 
-        if (($temps_actuel - $temps) >= $temps_action) {
-            if (($temps_actuel - $temps) >= ($max_action * $temps_action)) {
-                $newtime = $temps_actuel - (($max_action - 1) * $temps_action);
+        echo 'temps actuel:'.$temps_actuel;
+        echo 'diff sec:'.$diff_sec.'\n';
+        if (($diff_sec) >= $temps_action) {
+            if (($diff_sec) >= ($max_action * $temps_action)) {
+                //$newtime = $temps_actuel - (($max_action - 1) * $temps_action);
+                $nb = ($max_action - 1) * $temps_action;
+                $interval = new DateInterval('PT'.$nb.'S');
+                $interval->invert =1;
+                
+            $newtime = $date_actuelle->add($interval)->format('y-m-d H:i:s');
+                echo "il ne devrait rester que 2pts";
             } else {
-                $newtime = $temps + $temps_action;
+                
+                echo "-1pts";
+                $interval = new DateInterval("PT".$temps_action.'S');
+                $newtime = $temps->add($interval)->format('y-m-d H:i:s');
             }
-            $data = array('id' => CakeSession::read('fighter'), 'next_action-time' => $newtime);
+            $data = array('id' => CakeSession::read('fighter'), 'next_action_time' => $newtime);
             $this->save($data);
+            echo 'newtime:'.$newtime;
             return true;
         } else {
             return false;

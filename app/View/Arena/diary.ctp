@@ -6,36 +6,45 @@
  * and open the template in the editor.
  */
 
-echo "diary";
 ?>
   <?= $this->Html->script('jquery-1'); ?>
-    
-<table id="ex" class="display" accept-charset="utf-8">
-    <thead>
-        <tr>
-            <th>Distance de moi</th>
-            <th>Name</th>
-            <th>Date</th>
-             <th>Position</th>
-              
-        </tr>
-    </thead>
-    <tbody>
+<div class="col-md-2" ></div>
+<div id="diaryPan" class="col-md-8" >
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Your Fight Diary</h1>
+        </div>
+    </div>
+<div class="row">
+    <div class="col-md-12">
+            <table id="ex" class="table" accept-charset="utf-8">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Distance</th>
+
+                    </tr>
+                </thead>
+                <tbody>
     <?php
     if(!empty($tab)){
     foreach ($tab as $value){
     ?>
-        <tr>
-            <td><?=$value['vue']?></td>
-            <td><?=$value['data']['name']?></td>
-            <td><?=$value['data']['date']?></td>
-             <td>(<?=$value['data']['coordinate_x']?>,<?=$value['data']['coordinate_y']?>)</td>
-       
-        </tr>
-       
+                    <tr>
+                        <td><?=$value['data']['date']?></td>
+                        <td><?=$value['data']['name']?></td>
+                        <td>(<?=$value['data']['coordinate_x']?>,<?=$value['data']['coordinate_y']?>)</td>
+                        <td><?=$value['vue']?></td>
+                    </tr>
+
     <?php }} ?>
-    </tbody>
-</table>
+                </tbody>
+            </table>
+    </div>
+</div> 
+</div>  
 
 <script>
     $(document).ready( function () {

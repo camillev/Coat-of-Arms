@@ -98,7 +98,7 @@
                     <div class="col-md-6">
                         <div id="myInfos">
                             Level : <?= $info['level'] ?><br/>
-                            Strenght : <?= $info['skill_strength'] ?><br/> 
+                            Strength : <?= $info['skill_strength'] ?><br/> 
                             Sight : <?= $info['skill_sight'] ?><br/> 
                             Experience : <?= $info['xp'] ?><br/> 
                             <div class="progress">
@@ -197,7 +197,6 @@
 <!--Diary row-->
 <div class="row">
     <div id="diaryPan" class="col-md-12">
-        <div class="table-responsive">
             <table id="ex" class="table" accept-charset="utf-8">
                 <thead>
                     <tr>
@@ -224,7 +223,6 @@
     <?php }} ?>
                 </tbody>
             </table>
-        </div>
     </div>
 </div> 
 </div>

@@ -34,7 +34,9 @@ h2{
 div{
    color:white;
 }
-
+table{
+    color : white;
+}
 display#ex{
     height : 100px;
 }
@@ -57,17 +59,18 @@ div#avatar{
     text-align : center;
 }
 div#arenaPan{
-    background : rgba(50,50,50,0.5);
+    background : rgba(30,30,30,0.5);
     padding : 15px;
     margin-bottom: 10px;
     text-align : center;
 }
 
 div#diaryPan{
-    background : rgba(50,50,50,0.5);
+    background : rgba(30,30,30,0.5);
     padding : 15px;
     margin-bottom: 10px;
-    text-align : center;
+    text-align : left;
+    color :white;
 }
 
 div#actionPan{
@@ -90,8 +93,6 @@ div#xpAlert {
     text-align : center;
 }
 div#content {
-    min-width : 800px;
-    width : 1200px;
     margin: auto;
     background-color: rgba(0,0,0,0);
 }
@@ -108,7 +109,6 @@ table#arena {
 table#pad td {
     width : 30px;
     height : 30px;
-
 }
 
 button#case {
@@ -128,10 +128,7 @@ div#infoPerso{
     background-color: rgba(0,0,0,0);
     color : white;
 }
-div#evolution {
-    float : right;
-    width : 35% ; 
-}
+
 
 div#direction {
     float : right;
@@ -139,15 +136,23 @@ div#direction {
 }
 
 div#rightPan{
-    background : rgba(50,50,50,0.5);
+    background : rgba(30,30,30,0.5);
     text-align : center;
 }
-
+div#listePersoPan{
+    background : rgba(30,30,30,0.5);
+    padding : 15px;
+    text-align : left;
+}
 div#leftPan{
     background-color: rgba(0,0,0,0);
 }
-
 div#xpAlert{
     margin : 0px;
     padding : auto;
+}
+
+div#zoneBtnAddFighter{
+    margin-top : 10px;
+    margin-bottom : 10px;
 }

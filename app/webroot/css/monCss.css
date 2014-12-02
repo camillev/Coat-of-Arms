@@ -39,6 +39,10 @@ display#ex{
     height : 100px;
 }
 
+div{
+    color : white;
+}
+
 div#avatar{
     background : rgba(0,0,0,0);
     border-radius :10px;

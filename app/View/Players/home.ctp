@@ -12,7 +12,7 @@
 
   <div class="home">
   <div class="row">
-    <div class="col-md-offset-3 col-md-6 col-sm-6" >       <?= $this->Html->image( 'home.png', array('alt' => 'CakePHP','width'=>'100%')); ?></div>
+    <div class="col-md-offset-3 col-md-6 " >       <?= $this->Html->image( 'home.png', array('alt' => 'CakePHP','width'=>'100%')); ?></div>
 </div>
 </div>
 

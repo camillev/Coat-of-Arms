@@ -14,6 +14,22 @@ class ApisController extends AppController
     function fighterview($id)
     {
         $this->layout = 'ajax';
-        $this->set('datas', $this->Fighter->find('all'));
+        $this->set('datas', $this->Fighter->findById($id));
     }
+    
+     public function fightermove($id, $direction) {
+        $this->layout = 'ajax';
+        $this->Fighter->doMove($id, $direction);
+        $this->set('datas', $this->Fighter->findById($id));
+    }
+    
+    public function fighterattack($id, $direction) {
+        $this->layout = 'ajax';
+        $this->Fighter->doAttack($id, $direction);
+        $this->set('datas', $this->Fighter->findById($id));
+    }
+    
 }
+
+    
+   

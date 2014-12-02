@@ -156,8 +156,7 @@
 
 
         <div class="row">
-            <div class="col-md-2 col-xs-2"></div>
-            <div id="content" class="col-md-8 col-xs-8">
+            <div id="content" col-md-offset-4 col-xs-offset-4">
                 <center><?= $this->Session->flash(); ?></center>
                 <?= $this->fetch('content'); ?>
             </div>

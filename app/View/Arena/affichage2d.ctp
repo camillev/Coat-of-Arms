@@ -7,16 +7,7 @@
  */
 ?>
 <?= $this->Html->script('jquery-1');?>
-<br>
-<?= $this->Html->link(
-    'Affichage1D',
-    array(
-        'controller' => 'Arena',
-        'action' => 'affichage1d',
-        'full_base' => true
-    ) 
-); ?>
-<br>
+
 
 <div class="row">
     <!-- ARENE -->

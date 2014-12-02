@@ -35,6 +35,7 @@
          <?php  if (CakeSession::check('nom'))
               { 
        ?>
+                        
                         <a class="navbar-brand" href="../Arena/homeSession"><span class="glyphicon glyphicon-home"></span></a>
               <?php
              } else { ?>
@@ -56,6 +57,14 @@
         'full_base' => true
     ) 
 ); ?></li>
+                                <li><?= $this->Html->link(
+    'Tab View',
+    array(
+        'controller' => 'Arena',
+        'action' => "affichage1d",
+        'full_base' => true
+    ) 
+); ?></li>
                             <li><?= $this->Html->link(
     'Characters',
     array(
@@ -73,14 +82,7 @@
     ) 
 ); ?></li>
                         </ul>
-                        <form class="navbar-form navbar-left" role="search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search">
-                                <span class="input-group-btn">  
-                                    <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"/></button>
-                                </span>
-                            </div>
-                        </form>
+                       
               <?php } ?>
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
@@ -88,7 +90,7 @@
                                 <div class="dropdown-menu" role="menu" style="padding: 15px;">
               <?php  if (CakeSession::check('nom'))
               { ?>
-                                    <ul><a href="#">My account</a></ul>
+                                 
                                     <ul><?= $this->Html->link(
     'Deconnexion',
     array(

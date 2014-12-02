@@ -70,14 +70,14 @@ class PlayersController extends AppController {
                else {
                    //Email deja existant
                   
-                         $this->Session->setFlash('Email deja existant'); 
+                         $this->Session->setFlash('An account with this email already exist'); 
                }
            }
            else
            {
                //Le mot de passe est different de la confirmation
               
-                     $this->Session->setFlash('Mdp erroné'); 
+                     $this->Session->setFlash('ERROR : Tape two time the same password'); 
            } 
            
          $this->redirect(array("controller" => "Players", 
@@ -112,6 +112,9 @@ class PlayersController extends AppController {
                 
                 $this->redirect(array("controller" => "Arena", 
                           "action" => "homeSession"));
+            }
+            else {
+                $this->Session->setFlash('Wrong email or password'); 
             }
             
         }
@@ -149,12 +152,13 @@ class PlayersController extends AppController {
                 ->send();
         
         
-        echo 'mail envoyé!!';
+    $this->Session->setFlash('Email sended'); 
         
             }
             else
             {
                 //EMAIL INCONNU
+                $this->Session->setFlash('Warning : Email unknown'); 
             }
         
           $this->redirect(array("controller" => "Players", 
@@ -173,8 +177,7 @@ class PlayersController extends AppController {
         $this->set('email',$email);
         $this->set('pass',$pass_b1);
         
-        //echo $email;
-        //echo $pass_b1;
+
         
         if (!empty($result)){
             
@@ -182,15 +185,15 @@ class PlayersController extends AppController {
              $pass_b = $passwordHasher->hash( $result['Player']['password']);
              $id= $result['Player']['id'];
              if ($pass_b == $pass_b1){
-                 echo "Je suis bien la!";
+           
                  if ($this->request->is('post')){
                 $pass = $this->request->data['pass'];
                 $pass2= $this->request->data['pass_confirm'];
-                echo $pass.' '.$pass2;
+               
                 if ($pass==$pass2)
                 {
                     $this->Player->updateMdp($id,$pass);
-                    echo 'modif reussi';
+                    $this->Session->setFlash('Modification with success'); 
                      $this->redirect(array("controller" => "Players", 
                           "action" => "home"));
                     
@@ -198,16 +201,17 @@ class PlayersController extends AppController {
                 }
                 else
                 {
-                echo 'erreur mdp diferent';    
+               $this->Session->setFlash('Error : write two times the same password');  
                 //MDP DIFFERENT
                 }
             }
       
              }
-             else {echo "ERREUR mdp";
-        }}
+             $this->Session->setFlash('ERROR : Wrong link'); 
+        }
         else {
             echo "Cet utilisateur n'existe pas";
+            $this->Session->setFlash('This user does not exist'); 
         }
         
         

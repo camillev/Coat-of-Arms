@@ -52,8 +52,6 @@
             "order": [[0,"desc"]],
             "scrollY": "550px",
             "scrollColapse": true
-        });
-        //$('#ex').DefaultView.Sort = "Date DESC";
-        
+        });        
     });
 </script>

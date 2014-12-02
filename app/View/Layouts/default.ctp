@@ -121,7 +121,6 @@
            
             <script>
             FB.Event.subscribe("auth.login", function () {
-                $this->redirect(array('controller' => 'Players','action'=>'home'));
             });
              </script>
              
@@ -145,16 +144,10 @@
        
         </li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
     
-
-      <!--<div class="alert alert-info" role="alert">   <= $this->Session->flash(); ?></div>
-  -->
-   
-
-
         <div class="row">
             <div id="content" class="col-md-8 col-md-offset-2">
                 <center><?= $this->Session->flash(); ?></center>
@@ -179,9 +172,6 @@
       <?= $this->Html->script('jquery.dataTables'); ?>
 
        <?= $this->fetch('script'); ?>
-        <!--?= $this->Html->script('jquery.dataTables'); ?> -->
-
-
         <script>
             $(window).load(function () {
                 $('#myModal').modal('show');

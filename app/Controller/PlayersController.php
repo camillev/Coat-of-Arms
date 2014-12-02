@@ -16,7 +16,6 @@ class PlayersController extends AppController {
     //HOME PAGE
     public function home() {
         $avatar = $this->Fighter->carrousselAvatar();
-
         $this->set('avatar', $avatar);
     }
 
@@ -26,16 +25,10 @@ class PlayersController extends AppController {
             $email = $this->request->data['email'];
             $pass = $this->request->data['pass'];
             $pass_verif = $this->request->data['pass_confirm'];
-
-
             if ($pass == $pass_verif) {
                 $inf = $this->Player->find('first', array('conditions' => array('email' => $email)));
-
                 if (empty($inf)) {
                     $this->Player->addPlayer($email, $pass);
-
-                    //Mail inscription
-                    //$this->Player->mail_inscription($email);
                     $this->Session->setFlash('Inscription avec succes');
 
                     if ($this->Player->connexion($email, $pass)) {
@@ -84,7 +77,7 @@ class PlayersController extends AppController {
                     "action" => "homeSession"));
             } else {
                 $this->Session->setFlash('Wrong email or password');
-                
+
                 $this->redirect(array("controller" => "Players",
                     "action" => "Home"));
             }

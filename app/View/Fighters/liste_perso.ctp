@@ -17,7 +17,7 @@
             <h1>Your fighters</h1>
         </div>
     </div>
-     <div class="row" >
+    <div class="row" >
         <div class="col-md-12">
             <div id="zoneBtnAddFighter">
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Modal">
@@ -85,7 +85,7 @@ echo "<td>".$bla['Fighter']['current_health'].'/'.$bla['Fighter']['skill_health'
             </div>
         </div>
     </div>
-   
+
     <!-- Modal -->
     <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -116,9 +116,11 @@ echo "<td>".$bla['Fighter']['current_health'].'/'.$bla['Fighter']['skill_health'
 <script>
     $(document).ready(function () {
         $('#ex').DataTable({
-            "order": [[0,"desc"]],
+            "order": [[0, "desc"]],
+            "scrollY": "500px",
+            "scrollColapse": true
         });
         //$('#ex').DefaultView.Sort = "Date DESC";
-        
+
     });
 </script>

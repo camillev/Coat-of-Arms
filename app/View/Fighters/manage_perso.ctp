@@ -41,7 +41,7 @@
              {
              $link = "../managePerso/" . $id;}?>
                     </div>
-                    <div class="col-md-12 col-xs-12">
+                    <div class="col-md-12">
                         <div id="xpAlert">
            <?php if (($info['xp']-$info['level']*4) <4){ ?>
                             <div class="alert alert-info" role="alert">You need <?= 4-($info['xp']-$info['level']*4) ?> xp to level up</div>

@@ -24,64 +24,55 @@ class ArenaController extends AppController {
      *
      * @return void
      */
-    /// FONCTIONS C
     public function beforeFilter() {
-
-
         if (!CakeSession::check('nom')) {
             $this->redirect(array("controller" => "Players",
                 "action" => "home"));
         }
     }
 
-    //HOME PAGE COMPTE USER
     public function homeSession() {
         $avatar = $this->Fighter->carrousselAvatar();
         $this->set('avatar', $avatar);
     }
 
-    //
+    
     public function enterArena() {
-
         if (CakeSession::check('fighter')) {
             $this->redirect(array("controller" => "Arena",
                 "action" => "affichage2d"));
         }
-
         $idjoueur = CakeSession::read('nom')['id'];
-
         $data = $this->Fighter->afficherFighter($idjoueur);
-
         $this->set('list', $data);
     }
 
+    
     function randPosition($id) {
-
         $this->Fighter->goArena($id);
         CakeSession::write('fighter', $id);
         $this->redirect(array("controller" => "Arena",
             "action" => "affichage2d"));
     }
 
-    // Fonction globale de deconnexion + Redirection vers home page
+
+  
     public function deconnexion() {
         CakeSession::destroy();
-        // if (CakeSession::check('nom'))
-
         $this->redirect(array("controller" => "Players",
             "action" => "home"));
     }
 
+    
     public function affichage1d() {
-
         if (!CakeSession::check('fighter')) {
             $this->redirect(array("controller" => "Arena",
                 "action" => "enterArena"));
         }
-
+        //-----------------Actions-----------------------
         if ($this->request->is('post')) {
             if (isset($this->request->data["Fightermove"])) {
-                $this->Fighter->doMove(CakeSession::read('fighter'), $this->request->data['Fightermove']['direction']);                
+                $this->Fighter->doMove(CakeSession::read('fighter'), $this->request->data['Fightermove']['direction']);
                 $this->redirect(array('action' => 'affichage1d'));
             }
             if (isset($this->request->data["Fighterattack"])) {
@@ -91,37 +82,33 @@ class ArenaController extends AppController {
         }
         $this->set('tabArena', $this->Fighter->arenaFill());
         $this->set('id', CakeSession::read('fighter'));
-
-
-        /// Evolution perso
+        
+        //---------------Evolution perso---------------------
         $this->set('info', $this->Fighter->infoPerso(CakeSession::read('fighter')));
         if ($this->Fighter->testAvatar(CakeSession::read('fighter')) == 1) {
             $this->set('img', 'avatar/' . CakeSession::read('fighter') . '.png');
         } else {
             $this->set('img', 'blason_def.png');
         }
-
-      ///Diary
-        //$id_joueur = CakeSession::read('nom')['id'];
+        
+        //-------------------Diary----------------------------
         $id_fighter = CakeSession::read('fighter');
         $data = $this->Fighter->find('first', array('conditions' => array('fighter.id' => $id_fighter)));
-
         $this->set('tab', $this->Event->eventsFill($data));
 
-
-        ///Personnage tué
+        //-------------------Personnage tué-------------------
         $dead = $this->Fighter->find('first', array('conditions' => array('fighter.id' => $id_fighter, 'current_health <=' => '0')));
         if (!empty($dead)) {
             $this->redirect(array("controller" => "Arena",
                 "action" => "youReDead/" . $id_fighter));
         }
 
-        //Pts d'actions
+        //--------------------Pts d'actions-----------------------
         $this->set('pts_action', $this->Fighter->ptsAction());
-
+        
+        //-------------------Evolution des skills----------------
         $this->set('tab', $this->Fighter->tabFill());
         if ($this->request->is('post')) {
-
             if (isset($this->request->data['vue'])) {
                 $this->Fighter->evolution_perso($id_fighter, 'vue');
             }
@@ -131,7 +118,6 @@ class ArenaController extends AppController {
             if (isset($this->request->data['vie'])) {
                 $this->Fighter->evolution_perso($id_fighter, 'vie');
             }
-
             $this->redirect(array('action' => 'affichage1d'));
         }
     }
@@ -144,11 +130,11 @@ class ArenaController extends AppController {
     }
 
     public function affichage2d() {
-
         if (!CakeSession::check('fighter')) {
             $this->redirect(array("controller" => "Arena",
                 "action" => "enterArena"));
         }
+        //--------------------Actions------------------------
         if ($this->request->is('post')) {
             if (isset($this->request->data["Fightermove"])) {
                 $this->Fighter->doMove(CakeSession::read('fighter'), $this->request->data['Fightermove']['direction']);
@@ -162,8 +148,7 @@ class ArenaController extends AppController {
         $this->set('tabArena', $this->Fighter->arenaFill());
         $this->set('id', CakeSession::read('fighter'));
 
-
-        /// Evolution perso
+        //----------------Evolution perso--------------------
         $this->set('info', $this->Fighter->infoPerso(CakeSession::read('fighter')));
         if ($this->Fighter->testAvatar(CakeSession::read('fighter')) == 1) {
             $this->set('img', 'avatar/' . CakeSession::read('fighter') . '.png');
@@ -171,29 +156,24 @@ class ArenaController extends AppController {
             $this->set('img', 'blason_def.png');
         }
 
-
-
-        ///Diary
-        //$id_joueur = CakeSession::read('nom')['id'];
+        //----------------------Diary-------------------------
         $id_fighter = CakeSession::read('fighter');
         $data = $this->Fighter->find('first', array('conditions' => array('fighter.id' => $id_fighter)));
 
         $this->set('tab', $this->Event->eventsFill($data));
 
-
-        ///Personnage tué
+        //-------------------Personnage tué----------------
         $dead = $this->Fighter->find('first', array('conditions' => array('fighter.id' => $id_fighter, 'current_health <=' => '0')));
         if (!empty($dead)) {
             $this->redirect(array("controller" => "Arena",
                 "action" => "youReDead/" . $id_fighter));
         }
 
-        //Pts d'actions
+        //--------------------Pts d'actions---------------------
         $this->set('pts_action', $this->Fighter->ptsAction());
 
-        //evolution des perso
+        //----------------evolution des perso-----------------
         if ($this->request->is('post')) {
-
             if (isset($this->request->data['vue'])) {
                 $this->Fighter->evolution_perso($id_fighter, 'vue');
             }
@@ -203,16 +183,13 @@ class ArenaController extends AppController {
             if (isset($this->request->data['vie'])) {
                 $this->Fighter->evolution_perso($id_fighter, 'vie');
             }
-
             $this->redirect(array('action' => 'affichage2d'));
         }
     }
 
-    //Page evolution des Fighter
+    
     public function managePerso($id) {
-
         if ($this->request->is('post')) {
-
             if ($this->request->data['vue'] == TRUE) {
                 $this->Fighter->evolutionPerso($id, 'vue');
             }
@@ -222,31 +199,24 @@ class ArenaController extends AppController {
             if ($this->request->data['vie'] == TRUE) {
                 $this->Fighter->evolutionPerso($id, 'vie');
             }
-
-
             $this->redirect(array("controller" => "Arena", 'action' => 'affichage2d'));
         }
     }
 
     public function diary() {
-
         if (!CakeSession::check('fighter')) {
             $this->redirect(array("controller" => "Arena",
                 "action" => "enterArena"));
         }
-
         $id_joueur = CakeSession::read('nom')['id'];
         $id_fighter = CakeSession::read('fighter');
         $data = $this->Fighter->find('first', array('conditions' => array('fighter.id' => $id_fighter)));
-
         $this->set('tab', $this->Event->eventsFill($data));
     }
 
     function hallOfFame() {
         //$this->layout='clean'; 
     }
-
-    /// FONCTIONS S
 
     public function fighter() {
         $this->set('raw', $this->Fighter->findById(1));

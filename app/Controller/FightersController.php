@@ -24,6 +24,11 @@ class FightersController extends AppController {
        
       public function deleteFighter($id){
           
+             if ($this->Fighter->testAvatar($id)==1)
+        {
+            unlink(IMAGES.'avatar/'.$id.'.png');
+        } 
+        
           $this->Fighter->delete($id);
           $this->redirect(array("controller" => "Fighters", 
                           "action" => "listePerso"));
@@ -49,14 +54,13 @@ class FightersController extends AppController {
             $name = $this->request->data['name'];   
             $id=$this->Fighter->addPerso($name);
             $this->Session->setFlash('Ajout avec succes'); 
-            $rep = $this->Fighter->uploadFile2($this->request->data['addPerso']['avatarFile'],$id);
+            $rep = $this->Fighter->uploadFile2($this->request->data['addPerso']['avatar_file'],$id);
             if ($rep==false)
             {
                 $this->Session->setFlash('Vous ne pouvez pas envoyer ce type de fichier'); 
             }
-             //$this->response->header('location' , 'liste_perso' );
-             //$this->response->send();
-                $this->redirect(array("controller" => "Fighters", 
+           
+       $this->redirect(array("controller" => "Fighters", 
                           "action" => "listePerso"));
         }
         

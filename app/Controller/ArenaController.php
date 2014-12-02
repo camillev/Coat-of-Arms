@@ -95,6 +95,48 @@ class ArenaController extends AppController
                           "action" => "enter_arena"));
     }
         
+             if ($this->request->is('post')) {
+            if (isset($this->request->data["Fightermove"])){
+            $this->Fighter->doMove(CakeSession::read('fighter'), $this->request->data['Fightermove']['direction']);}
+            if (isset($this->request->data["Fighterattack"])){
+            $this->Fighter->doAttack(CakeSession::read('fighter'), $this->request->data['Fighterattack']['attack']);}
+        }
+        $this->set('tabArena', $this->Fighter->arenaFill());
+         $this->set('id', CakeSession::read('fighter'));
+        
+        
+        /// Evolution perso
+        $this->set('info', $this->Fighter->infoPerso(CakeSession::read('fighter')));
+         if ($this->Fighter->testAvatar(CakeSession::read('fighter'))==1)
+        {
+            $this->set('img','avatar/'.CakeSession::read('fighter').'.png');
+        }
+        else
+        {
+            $this->set('img','blason_def.png');
+        }
+        
+        
+        
+        ///Diary
+         //$id_joueur = CakeSession::read('nom')['id'];
+         $id_fighter = CakeSession::read('fighter');
+          $data = $this->Fighter->find('first',array('conditions'=>array('fighter.id'=>$id_fighter)));
+        
+          $this->set('tab', $this->Event->eventsFill($data));
+          
+          
+          ///Personnage tué
+          $dead = $this->Fighter->find('first',array('conditions'=>array('fighter.id'=>$id_fighter,'current_health <=' =>'0')));
+          if (!empty($dead))
+          {
+                 $this->redirect(array("controller" => "Arena", 
+                          "action" => "you_re_dead/".$id_fighter));
+          }
+          
+              //Pts d'actions
+    $this->set('pts_action',$this->Fighter->ptsAction());
+         
        $this->set('tab', $this->Fighter->tabFill());
          
          

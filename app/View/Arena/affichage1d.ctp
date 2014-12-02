@@ -58,7 +58,7 @@
 
                         <tr>
                             <td><?=$value['vue']?></td>
-                            <td><?= $this->Html->image($value['data']['type'].'.jpg', array('alt' => 'CakePHP',  'width' => '50px'))?></td>
+                            <td><?php echo $this->Html->image($value['data']['type'].'.png', array('alt'=>'???', 'width'=>'100%','id'=> 'imagecase'))?></td>
                             <td><?=$value['data']['type']?></td>
                             <td>(<?=$value['data']['coordinate_x']?>,<?=$value['data']['coordinate_y']?>)</td>
 
@@ -208,7 +208,7 @@ $this->Form->end('Attack');
     $(document).ready(function () {
         $('#ex').DataTable({
             "order": [[0,"desc"]],
-            "scrollY": "200px",
+            "scrollY": "700px",
             "scrollColapse": true
         });
     });

@@ -157,11 +157,12 @@
             Develloped by: Camille VACELET, Suzanne GARCIA, Lucile KIM LAM, Anna GUINET<br/>
             Group: 09-CG Time gestion and Connexion with facebook <br>
             Other options: Surroundings gestion, Bootstrap UI<br/>
-            Contact information: <a href="mailto:coatofarms-contact@gmail.com">
-                coaotofarms-contact@gmail.com</a>.<br/>
-                Bonus: Website address <a href="mailto:coatofarms-contact@gmail.com">
-                addressedu site</a>
-            Adresse du site/ <a href="https://github.com/camillev/Coat-of-Arms">Github</a> /Options suplémentaires<br/>
+           
+                Bonus:  <a href="http://sd-41464.dedibox.fr/web/Coat-of-Arms/players/home">
+                Website on line</a> / 
+                <a href="https://github.com/camillev/Coat-of-Arms">Github</a>/ <?php echo $this->Html->link("log", "/files/versions.log");  ?> <br/>
+             Contact information: <a href="mailto:coatofarms-contact@gmail.com">
+                coaotofarms-contact@gmail.com</a>
         </footer>
 
 

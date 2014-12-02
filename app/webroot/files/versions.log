@@ -1,0 +1,461 @@
+commit f5fe667b2e78b1e374f3aabacf54c4091d03e0d1
+Author: SlouBidou <slou412@gmail.com>
+Date:   Tue Dec 2 20:23:32 2014 +0100
+
+    Footer
+
+commit 33adbad99ed4a6dcc0f59c8e13dcdac0273a3b51
+Author: SlouBidou <slou412@gmail.com>
+Date:   Tue Dec 2 20:07:22 2014 +0100
+
+    Modif erreur navbar
+
+commit 99b69edaade7c67ffc3a923a09059633c79d0d1a
+Author: SlouBidou <slou412@gmail.com>
+Date:   Tue Dec 2 19:57:28 2014 +0100
+
+    Modification navbar
+
+commit 383b5f723dd64a68fbde3084762308456476603f
+Author: kimilu <lucile.kim.lam@gmail.com>
+Date:   Tue Dec 2 19:46:30 2014 +0100
+
+    Apis
+    
+    Apis
+
+commit d2a9f29afa3965b75dac510d7056a5bebf1bb20d
+Author: SlouBidou <slou412@gmail.com>
+Date:   Tue Dec 2 19:41:28 2014 +0100
+
+    affichage des arbres en 1D
+
+commit f00df96638a410a415276e73a25b99d7aae1ec72
+Author: SlouBidou <slou412@gmail.com>
+Date:   Tue Dec 2 19:30:36 2014 +0100
+
+    Indentation des sessions
+
+commit 244d703e178df513290cb3969b458af3b93d877c
+Author: kimilu <lucile.kim.lam@gmail.com>
+Date:   Tue Dec 2 19:27:18 2014 +0100
+
+    player update
+
+commit bb1eec2c0e2b58882babffdd31c074bbff35b114
+Author: SlouBidou <slou412@gmail.com>
+Date:   Tue Dec 2 18:03:59 2014 +0100
+
+    Update interface sur colonne de bootstrap
+
+commit d4f4565a6f32d1ff4564b09ae006325cd1202c86
+Author: SlouBidou <slou412@gmail.com>
+Date:   Tue Dec 2 17:05:41 2014 +0100
+
+    update skin interface global
+
+commit 3c2e211921d10958adcffa5f016c32bd5c161489
+Author: SlouBidou <slou412@gmail.com>
+Date:   Tue Dec 2 15:53:54 2014 +0100
+
+    Fix des derniers bugs
+    
+    Plein de choses
+
+commit 7a9c9f0a6fedd61b88737180469a709a6a9456ad
+Author: SlouBidou <slou412@gmail.com>
+Date:   Tue Dec 2 13:27:29 2014 +0100
+
+    Reupdate du CSS
+
+commit bae74c0d16fc86e00e3cddc7acb74c118444f03c
+Author: SlouBidou <slou412@gmail.com>
+Date:   Tue Dec 2 11:19:16 2014 +0100
+
+    restauration du bon fichier CSS
+    
+    CACA GIT CACA
+
+commit 6105eab8079b805ab73b8c195d1b46131172c1c8
+Merge: 5f18a48 8e779c5
+Author: kimilu <lucile.kim.lam@gmail.com>
+Date:   Tue Dec 2 10:17:02 2014 +0100
+
+    Merge branch 'master' of https://github.com/camillev/Coat-of-Arms
+    
+    Conflicts:
+    	app/Controller/ArenaController.php
+    	app/nbproject/private/private.xml
+    	app/tmp/cache/models/myapp_cake_model_default_arenaweb_events
+    	app/tmp/cache/models/myapp_cake_model_default_arenaweb_fighters
+    	app/tmp/cache/models/myapp_cake_model_default_arenaweb_list
+    	app/tmp/cache/models/myapp_cake_model_default_arenaweb_players
+    	app/tmp/cache/models/myapp_cake_model_default_arenaweb_surroundings
+    	app/tmp/cache/persistent/myapp_cake_core_cake_dev_en-us
+    	app/tmp/cache/persistent/myapp_cake_core_default_en-us
+    	app/tmp/cache/persistent/myapp_cake_core_file_map
+    	app/tmp/cache/persistent/myapp_cake_core_method_cache
+    	app/tmp/logs/error.log
+    	app/webroot/css/monCss.css
+
+commit 5f18a488b011861737d40a7846eb376a6f288deb
+Merge: 328b754 b0705ac
+Author: kimilu <lucile.kim.lam@gmail.com>
+Date:   Tue Dec 2 10:15:16 2014 +0100
+
+    Merge remote-tracking branch 'origin/master'
+    
+    Conflicts:
+    	app/Controller/ArenaController.php
+    	app/webroot/css/monCss.css
+
+commit 8e779c58078866e9b76d4b88101f1a79bd64b2b4
+Merge: 410917a 0d3e552
+Author: SlouBidou <slou412@gmail.com>
+Date:   Tue Dec 2 09:57:59 2014 +0100
+
+    Merge remote-tracking branch 'origin/master'
+    
+    Conflicts:
+    	app/tmp/cache/models/myapp_cake_model_default_arenaweb_events
+    	app/tmp/cache/models/myapp_cake_model_default_arenaweb_fighters
+    	app/tmp/cache/models/myapp_cake_model_default_arenaweb_list
+    	app/tmp/cache/models/myapp_cake_model_default_arenaweb_players
+    	app/tmp/cache/models/myapp_cake_model_default_arenaweb_surroundings
+    	app/tmp/cache/persistent/myapp_cake_core_cake_dev_fr
+    	app/tmp/cache/persistent/myapp_cake_core_default_fr
+    	app/tmp/cache/persistent/myapp_cake_core_file_map
+    	app/tmp/cache/persistent/myapp_cake_core_method_cache
+    	app/tmp/logs/error.log
+
+commit 0d3e552904b1b71cbdceccd726ca669601a49491
+Author: camillev <camille.vacelet@gmail.com>
+Date:   Tue Dec 2 09:33:00 2014 +0100
+
+    Error messages + linking pbs
+    
+    Alert message for inscription/connexion/recupmdp/addfighter
+    Linking pb for addfighter
+
+commit 410917a12447a33172a57b2a096c70c0f3e24d91
+Author: SlouBidou <slou412@gmail.com>
+Date:   Mon Dec 1 22:59:14 2014 +0100
+
+    update du skin des pages selon le modèle de l'arène
+
+commit 328b7543d2e7c852fcf00ebef47250d887a0f392
+Author: kimilu <lucile.kim.lam@gmail.com>
+Date:   Mon Dec 1 22:20:43 2014 +0100
+
+    home, homesession et you're dead
+    
+    j'ai fait cees pages en mode belles mais il y a des erreurs sur la page
+    you're dead qui etaient déjà la avant mais je ne sais pas les enlever
+    donc voila
+
+commit 3e71af9585e1f7a91ca165cb8035f313e56a459d
+Author: SlouBidou <slou412@gmail.com>
+Date:   Mon Dec 1 20:38:16 2014 +0100
+
+    Affichage pts d'actions et petites modif skin
+
+commit b0705ace7669db62cfb9abdf7d7553839975d1d9
+Author: SlouBidou <slou412@gmail.com>
+Date:   Mon Dec 1 19:28:53 2014 +0100
+
+    fix bug creation d'event quand un joueur rentre dans l'arene
+
+commit e31659994904b1dc3d2aa43b6489f6f8abdee38f
+Merge: 2ca700a 5e69fb0
+Author: SlouBidou <slou412@gmail.com>
+Date:   Mon Dec 1 16:14:44 2014 +0100
+
+    Merge remote-tracking branch 'origin/master'
+    
+    Conflicts:
+    	app/View/Layouts/default.ctp
+    	app/tmp/cache/models/myapp_cake_model_default_arenaweb_fighters
+    	app/tmp/cache/models/myapp_cake_model_default_arenaweb_list
+    	app/tmp/cache/models/myapp_cake_model_default_arenaweb_players
+    	app/tmp/cache/persistent/myapp_cake_core_method_cache
+
+commit 2ca700ac8ac98cd2a341d3394613734cdc3d6f81
+Author: SlouBidou <slou412@gmail.com>
+Date:   Mon Dec 1 16:02:14 2014 +0100
+
+    Update du skin page arena
+
+commit 5e69fb0cc4cf63e7d947c491e739c3c757ac96da
+Author: camillev <camille.vacelet@gmail.com>
+Date:   Mon Dec 1 14:57:51 2014 +0100
+
+    Modification recup_mdp
+    
+    utilisation de la methode désiré par le prof
+
+commit 8558c647859808e35a237d87e99e18289d9aab81
+Author: camillev <camille.vacelet@gmail.com>
+Date:   Mon Dec 1 10:24:49 2014 +0100
+
+    Modification de la methode de hachage des mdp
+    
+    Utilisation de la fonction de hachage de cakePhp au lieu de sha1
+
+commit 249cd71e2a7d5f8917f5d96d0c3c4b4fb5b7bf20
+Author: annaqui-n <anna.guinet@gmail.com>
+Date:   Mon Dec 1 15:39:31 2014 +0100
+
+    facebook
+    
+    google en cours
+
+commit 2e57283d3713b57a872cbcf9b018bacb1c99f0e1
+Author: SlouBidou <slou412@gmail.com>
+Date:   Mon Dec 1 12:19:06 2014 +0100
+
+    Update de l'interface de l'arène
+    
+    rajout des skins des differentes div
+
+commit fd2a80dc6a679f997740d4f3ab269b08b18256dd
+Author: camillev <camille.vacelet@gmail.com>
+Date:   Mon Dec 1 10:14:48 2014 +0100
+
+    Gestion du temps et affichage des pts d'actions
+    
+    Correction de la fonction checkTime avec les bonnes fct DateTime -> ok
+    Affichage des pts d'action en haut de l'arene -> ok
+
+commit b7739064f3d187a812a365d54c1797dbbe593126
+Author: camillev <camille.vacelet@gmail.com>
+Date:   Mon Dec 1 08:54:33 2014 +0100
+
+    Affichage Pts d'action en haut de l'arène
+    
+    Suzanne -> tu peux utiliser la variable ou tu le souhaite.
+    (Pour l'instant le résultat n'est pas le bon)
+
+commit 8242526979c6f638c94c059c8e3fbbd190d52185
+Author: camillev <camille.vacelet@gmail.com>
+Date:   Mon Dec 1 08:22:50 2014 +0100
+
+    Test jqplot
+
+commit 29d3d0977c84f613f3af0da07c46b935be3a0e4a
+Author: SlouBidou <slou412@gmail.com>
+Date:   Mon Dec 1 02:45:09 2014 +0100
+
+    Update de skin et fix de la fonction doAttack
+    
+    embrouille dans les events fixé
+
+commit a517e48aa498323252c75ddf52ffad4d32f2e9ba
+Author: SlouBidou <slou412@gmail.com>
+Date:   Mon Dec 1 01:34:01 2014 +0100
+
+    Update skin et fix de la fonction getDanger
+
+commit b7163806af4b042c5e6f98b822e73065307ad88d
+Author: SlouBidou <slou412@gmail.com>
+Date:   Mon Dec 1 00:20:35 2014 +0100
+
+    Update du skin global
+
+commit 102b9daf20fc32a5229b29311134cf78bccf623c
+Author: SlouBidou <slou412@gmail.com>
+Date:   Fri Nov 28 19:11:21 2014 +0100
+
+    comit because i Had to :D
+
+commit 3acceafe7058bba66a32062702ad9a19aec26b8b
+Author: SlouBidou <slou412@gmail.com>
+Date:   Fri Nov 28 16:05:58 2014 +0100
+
+    Fix some rename problem
+
+commit 64838e72aa17bb97f4bd39ec733387dedb145429
+Author: SlouBidou <slou412@gmail.com>
+Date:   Fri Nov 28 15:24:58 2014 +0100
+
+    Upadte the diary with events
+    
+    in doMove and doAttack function so except the enter of a fighter.
+    camelCased every functions
+
+commit 680c8aa2f366d33184ea0d6f9e5391dcb6dd48c6
+Author: SlouBidou <slou412@gmail.com>
+Date:   Fri Nov 28 00:42:12 2014 +0100
+
+    New random position
+    
+    add random position and new avatar
+
+commit fe11d621acd4d6d8476e3c866675f79632660b34
+Author: SlouBidou <slou412@gmail.com>
+Date:   Thu Nov 27 20:49:28 2014 +0100
+
+    Adding images
+    
+    For exit :)
+
+commit 6ee0042f8f658bbc55014831b4ea80d3a37b7fff
+Author: SlouBidou <slou412@gmail.com>
+Date:   Tue Nov 25 19:06:40 2014 +0100
+
+    Tree updated
+    
+    trees updated with new img
+
+commit 5725420c19b1082f5959dfec60c03486e2412b0a
+Author: SlouBidou <slou412@gmail.com>
+Date:   Tue Nov 25 18:29:34 2014 +0100
+
+    Ajout des fonctions do attack et domove
+    
+    Ajout et modif des déplcament et attaque avec les surrounding +
+    affichage surrounding
+
+commit 77b85269da5b64817061ca281b2c00ee428069ec
+Author: camillev <camille.vacelet@gmail.com>
+Date:   Tue Nov 25 14:02:29 2014 +0100
+
+    Affichage des surroundings
+    
+    Fonction getSurrounding
+    Fonction getSurroundingVisible
+    Affichage des surroundings dans l'affichage 1d
+    Affichage des surroundings dans l'affichage 2d
+
+commit c1d2c8b247d6993190e0243cff9854ac142d839e
+Author: camillev <camille.vacelet@gmail.com>
+Date:   Tue Nov 25 12:07:45 2014 +0100
+
+    Correction conflit avec lulu (icone trash et edit)
+
+commit 82437471bfc92d2b47c6b7bd3c7840c21a4e9082
+Author: camillev <camille.vacelet@gmail.com>
+Date:   Tue Nov 25 10:48:04 2014 +0100
+
+    Message à la mort dun fighter ET suppression du fighter
+
+commit 4a97b4a1687c8d212c5f3d96de5ec646079b3e72
+Author: camillev <camille.vacelet@gmail.com>
+Date:   Mon Nov 24 23:14:47 2014 +0100
+
+    Correction des pbs
+
+commit 05c18800460cbf12066927a84bddbe982a8dc2b9
+Merge: 57ed549 2fa9b04
+Author: camillev <camille.vacelet@gmail.com>
+Date:   Mon Nov 24 23:06:55 2014 +0100
+
+    Merge branch 'master' of https://github.com/camillev/Coat-of-Arms
+    
+    Conflicts:
+    	app/tmp/cache/models/myapp_cake_model_default_arenaweb_events
+    	app/tmp/cache/models/myapp_cake_model_default_arenaweb_fighters
+    	app/tmp/cache/models/myapp_cake_model_default_arenaweb_list
+    	app/tmp/cache/models/myapp_cake_model_default_arenaweb_players
+    	app/tmp/cache/persistent/myapp_cake_core_cake_dev_fr
+    	app/tmp/cache/persistent/myapp_cake_core_default_fr
+    	app/tmp/cache/persistent/myapp_cake_core_file_map
+    	app/tmp/cache/persistent/myapp_cake_core_method_cache
+
+commit 57ed549e8067c965c49c912e7797202088207fb8
+Merge: 71559da 6c001e1
+Author: camillev <camille.vacelet@gmail.com>
+Date:   Mon Nov 24 16:29:24 2014 +0100
+
+    Merge remote-tracking branch 'origin/master'
+    
+    Conflicts:
+    	app/tmp/cache/models/myapp_cake_model_default_arenaweb_events
+    	app/tmp/cache/models/myapp_cake_model_default_arenaweb_fighters
+    	app/tmp/cache/models/myapp_cake_model_default_arenaweb_list
+    	app/tmp/cache/models/myapp_cake_model_default_arenaweb_players
+    	app/tmp/cache/persistent/myapp_cake_core_file_map
+    	app/tmp/cache/persistent/myapp_cake_core_method_cache
+    	app/tmp/logs/error.log
+
+commit 2fa9b041a22d4ffa8c2eed3188dd8e0c64789854
+Author: kimilu <lucile.kim.lam@gmail.com>
+Date:   Mon Nov 24 15:46:13 2014 +0100
+
+    check_time
+
+commit 3d41e390fe1b323fc278c3889e0ffac98a901f5e
+Author: kimilu <lucile.kim.lam@gmail.com>
+Date:   Mon Nov 24 15:44:57 2014 +0100
+
+    Fonction check-time fonctionnelle
+    
+    (enfin normalement ca marche mais j'ai pas testé)
+
+commit 71559daac02011a727c0494201bf865145c3ade4
+Author: camillev <camille.vacelet@gmail.com>
+Date:   Mon Nov 24 15:35:52 2014 +0100
+
+    fonction position_aleatoire
+
+commit 6c001e1e110cb221dba7c9a46d59381df79c6c3a
+Author: kimilu <lucile.kim.lam@gmail.com>
+Date:   Mon Nov 24 13:40:46 2014 +0100
+
+    Icon trash et edit et barre nav "active" nul part
+    
+    j'ai mis des icons à la place de "manage" et "delete" dans la ou on voit
+    les fighters et j'ai retiré le "arena" toujours actif dans la barre de
+    navigation
+
+commit 3f5d444f5a1fcf2b10252003e0083c8eade4724b
+Author: camillev <camille.vacelet@gmail.com>
+Date:   Mon Nov 24 09:58:41 2014 +0100
+
+    Amélioration affichage2d
+    
+    -ajout de l'évolution à coté de l'affichage de l'arene
+    -gestion de la taille de l'arene afin qu'elle reste fixe
+    -test : boutton attack et move en forme de pad
+
+commit eb00974e17d4e3239bdca686daf1adeb0d39a5dc
+Author: camillev <camille.vacelet@gmail.com>
+Date:   Fri Nov 21 12:25:13 2014 +0100
+
+    Modifications diverses
+    
+    add_perso : dans une modale
+    taille des images dans les tableaux fixé à 50px
+    Si pas de fighter dans l'arene choix du fighter et positionnement
+    aléatoire de celui ci
+    Redirection vers home_session après inscription
+    Fonction suppression d'un fighter
+
+commit 55500dac56ebec2f67463c1abdbb26793819afc9
+Author: camillev <camille.vacelet@gmail.com>
+Date:   Fri Nov 21 10:42:23 2014 +0100
+
+    Inscription
+
+commit 441d7703d56734360336239d4bd010da2eb2afc9
+Author: camillev <camille.vacelet@gmail.com>
+Date:   Fri Nov 21 08:00:50 2014 +0100
+
+    Upload du projet de base
+    
+    Page d'accueil -> connexion/inscription/recup_mdp/slider avatar (il
+    manque le hall of fame avec jqplot ET connexion fb/gg)
+    
+    Arène en 1D et 2D en fonction du fighter qui se trouve sur l'arène
+    (il manque le choix du fighter à faire entrer si personne sur l'arène et
+    son initialisation de position ET gestion temps)
+    
+    Liste des fighters du joueur connecté/Ajouter un fighter/Modifier son
+    avatar/Faire évoluer son fighter
+    
+    Diary corespondant au fighter sur l'arène
+
+commit 703078d7deffa005817cee4e1b0bacdad5912255
+Author: camillev <camille.vacelet@gmail.com>
+Date:   Fri Nov 21 07:47:48 2014 +0100
+
+    :boom::camel: Added .gitattributes & .gitignore files

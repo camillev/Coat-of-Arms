@@ -156,11 +156,10 @@
 
 
         <div class="row">
-            <div id="content" col-md-offset-4 col-xs-offset-4">
+            <div id="content" class="col-md-8 col-md-offset-2">
                 <center><?= $this->Session->flash(); ?></center>
                 <?= $this->fetch('content'); ?>
             </div>
-            <div class="col-md-2 col-xs-2"></div>
         </div>
 
 

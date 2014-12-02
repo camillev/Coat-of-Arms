@@ -10,7 +10,7 @@
  <?= $this->Html->script('jquery-1'); ?>
 <div class="row">
     <!-- ARENE -->
-    <div id="leftPan" class="col-md-8 col-xs-8">
+    <div id="leftPan" class="col-md-8">
         <div class="row">
             <div id="arenaPan" class="col-md-12">
                 <table id="ex" class="table">
@@ -77,7 +77,7 @@
             </div>
         </div>
     </div> 
-    <div class="col-md-4 col-xs-8">
+    <div class="col-md-4">
         <!-- EVOLUTION -->
         <div id="rightPan" class="col-md-12">
             <div id="infoPerso" class="row">
@@ -110,7 +110,7 @@
              {
              $link = "managePerso/" . $id;}?>
                     </div>
-                    <div class="col-md-12 col-xs-12">
+                    <div class="col-md-12">
                         <div id="xpAlert">
            <?php if (($info['xp']-$info['level']*4) <4){ ?>
                             <div class="alert alert-info" role="alert">You need <?= 4-($info['xp']-$info['level']*4) ?> xp to level up</div>

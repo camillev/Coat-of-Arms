@@ -29,7 +29,6 @@ body{
     background-attachment: fixed; 
     background-size: cover; 
     background-size: cover;
-    //background-color : red;
 }
 
 table{
@@ -95,9 +94,6 @@ div#xpAlert {
     text-align : center;
 }
 div#content {
-    min-width : 800px;
-    width : 1200px;
-    margin: auto;
     background-color: rgba(0,0,0,0);
 }
 
@@ -131,10 +127,7 @@ div#infoPerso{
     background-color: rgba(0,0,0,0);
     color : white;
 }
-div#evolution {
-    float : right;
-    width : 35% ; 
-}
+
 
 div#rightPan{
     background : rgba(50,50,50,0.5);

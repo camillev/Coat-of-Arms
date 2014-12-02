@@ -39,9 +39,9 @@ class Fighter extends AppModel {
             $y = rand(0, 9);
             $resp = $this->getFighter($x, $y);
         } while ($resp != false);
-
         $data = array('coordinate_x' => $x, 'coordinate_y' => $y, 'id' => $id);
-        $event->createEvent($datas['Fighter']['name'] . " entered the arena.", $datas['Fighter']['coordinate_x'], $datas['Fighter']['coordinate_y']);
+        $fighter = $this->findById($id);
+        $event->createEvent($fighter['Fighter']['name']." entered the arena.", $x, $y);
         $this->save($data);
     }
 
@@ -165,6 +165,8 @@ class Fighter extends AppModel {
                 $event->createEvent($datas['Fighter']['name'] . " attacked " . $victim['Fighter']['name'] . " for " . $datas['Fighter']['skill_strength'] . " dammage !", $datas['Fighter']['coordinate_x'], $datas['Fighter']['coordinate_y']);
                 if ($victim['Fighter']['current_health'] <= 0) {
                     $datas['Fighter']['xp']+=$victim['Fighter']['level'];
+                    $victim['Fighter']['coordinate_x']=-1;
+                    $victim['Fighter']['coordinate_y']=-1;
                     $event->createEvent($victim['Fighter']['name'] . " has been killed by" . $datas['Fighter']['name'] . " !", $datas['Fighter']['coordinate_x'], $datas['Fighter']['coordinate_y']);
                 }
                 $this->save($victim);
@@ -256,7 +258,7 @@ class Fighter extends AppModel {
         return $this->id;
     }
 
-    function evolutionPerso($id_perso, $skills) {
+    function evolution_perso($id_perso, $skills) {
 
         $perso = $this->infoPerso($id_perso);
 

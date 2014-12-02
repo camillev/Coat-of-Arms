@@ -3,28 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp/www/Coat-of-Arms/app/Controller/FightersController.php</file>
             <file>file:/C:/wamp/www/Coat-of-Arms/app/webroot/css/monCss.css</file>
             <file>file:/C:/wamp/www/Coat-of-Arms/app/Controller/ArenaController.php</file>
-            <file>file:/C:/wamp/www/Coat-of-Arms/app/Model/Fighter.php</file>
-            <file>file:/C:/wamp/www/Coat-of-Arms/app/Model/AppModel.php</file>
-            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Arena/affichage2d.ctp</file>
             <file>file:/C:/wamp/www/Coat-of-Arms/app/Controller/AppController.php</file>
-            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Fighters/liste_perso.ctp</file>
-            <file>file:/C:/wamp/www/Coat-of-Arms/app/Controller/PagesController.php</file>
-            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Arena/you_re_dead.ctp</file>
-            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Layouts/default.ctp</file>
-            <file>file:/C:/wamp/www/Coat-of-Arms/app/Model/Surrounding.php</file>
-            <file>file:/C:/wamp/www/Coat-of-Arms/app/Model/Event.php</file>
-            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Arena/fighter.ctp</file>
-            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Fighters/manage_perso.ctp</file>
-            <file>file:/C:/wamp/www/Coat-of-Arms/app/Controller/ApisController.php</file>
-            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Arena/rand_position.ctp</file>
-            <file>file:/C:/wamp/www/Coat-of-Arms/app/Model/Player.php</file>
             <file>file:/C:/wamp/www/Coat-of-Arms/app/Controller/PlayersController.php</file>
-            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Arena/affichage1d.ctp</file>
-            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Fighters/add_perso.ctp</file>
-            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Fighters/delete_fighter.ctp</file>
+            <file>file:/C:/wamp/www/Coat-of-Arms/app/View/Players/home.ctp</file>
         </group>
     </open-files>
 </project-private>

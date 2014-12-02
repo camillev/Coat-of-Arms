@@ -36,10 +36,10 @@
               { 
        ?>
                         
-                        <a class="navbar-brand" href="../Arena/homeSession"><span class="glyphicon glyphicon-home"></span></a>
+                        <a class="navbar-brand" href="<?php echo $this->Html->url(array('controller' => 'Arena','action'=>'homeSession'));?>"><span class="glyphicon glyphicon-home"></span></a>
               <?php
              } else { ?>
-                        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span></a>
+                        <a class="navbar-brand" href="<?php echo $this->Html->url(array('controller' => 'Players','action'=>'home'));?>"><span class="glyphicon glyphicon-home"></span></a>
               <?php } ?>
                     </div>
 
@@ -106,16 +106,17 @@
                                         <input class="form-control" type="password" name="pass" id="pass" placeholder="Password" />
                                         <input class="btn btn-primary" type="submit" name="sub" value="Connexion"/>
                                     </form>
-              
+                                    <a href="<?php echo $this->Html->url(array('controller' => 'Players','action'=>'facebook'));?>" class="facebookConnect"> Connect with Facebook</a> <br>
+        
                                     <button type="button" class="btn btn-link" data-toggle="modal" data-target="#ModalRecupMdp">
                                         Forgot your passsword ?
                                     </button>
+                                 
+           
 
              <?php } ?>
               
-    <div class="span8"><div class="page header">
-           <a href="<?php echo $this->Html->url(array('controller' => 'Players','action'=>'facebook'));?>" class="facebookConnect"> Connect with Facebook</a> 
-        </div>
+   
             <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js">
             </script>
             <?php echo $this->Html->script('facebook'); ?>
@@ -137,7 +138,7 @@
         <a href="?logout" ><h5>Logout</h5></a>
     <?php } else { ?>	
       <div id="signin-button" class="show">
-        <a href="<?php echo($authUrl); ?>" ><h5>COnnect with Google+</h5></a>
+        <!--<a href="<?php echo($authUrl); ?>" ><h5>COnnect with Google+</h5></a>-->
     <?php } ?>
        </div>
 

@@ -121,12 +121,15 @@
         else { ?>
                             <div class="alert alert-success" role="alert"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span> You can up to <?= variant_int(($info['xp']-$info['level']*4)/4) ?> levels
                                 <div id="evolv" class="row" >
-                                    <form method="POST" action=<?= $link ?> >
-                                        <div class="col-md-4"><button class="btn btn-primary btn-xs" type="submit" name="force" value="+1pts Force">Strength <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button></div>
-                                        <input type="hidden" name="id" value=<?= $id ?>  /> 
-                                        <div class="col-md-4"><button class="btn btn-primary btn-xs" type="submit" name="vue" value="+1pts Vue">Sight <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button></div>
-                                        <div class="col-md-4"><button class="btn btn-primary btn-xs" type="submit" name="vie" value="+3pts Vie"/>Health <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button></div>
-                                    </form>
+                                     <?= $this->Form->create('force');?>    
+                                        <div class="col-md-4"><button class="btn btn-primary btn-xs" type="submit" name="data[force][force]" value="+1pts Force">Strength <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button></div>
+                                    <?= $this->Form->end();?>
+                                    <?= $this->Form->create('vue')?>
+                                        <div class="col-md-4"><button class="btn btn-primary btn-xs" type="submit" name="data[vue][vue]" value="+1pts Vue">Sight <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button></div>
+                                    <?= $this->Form->end();?>
+                                    <?= $this->Form->create('vie')?>    
+                                        <div class="col-md-4"><button class="btn btn-primary btn-xs" type="submit" name="data[vie][vie]" value="+3pts Vie"/>Health <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button></div>
+                                    <?= $this->Form->end();?>
                                 </div>
                             </div>
         <?php } ?>
@@ -249,6 +252,12 @@ $this->Form->end('Attack');
 
 <script>
     $(document).ready(function () {
-        $('#ex').DataTable();
+        $('#ex').DataTable({
+            "order": [[0,"desc"]],
+            "scrollY": "200px",
+            "scrollColapse": true
+        });
+        //$('#ex').DefaultView.Sort = "Date DESC";
+        
     });
 </script>

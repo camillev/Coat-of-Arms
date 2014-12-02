@@ -3235,7 +3235,7 @@ tbody.collapse.in {
   font-size: 14px;
   text-align: left;
   list-style: none;
-  background-color: #fff;
+  background-color: rgb(30,30,30);
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
   border: 1px solid #ccc;
@@ -5537,7 +5537,7 @@ button.close {
 }
 .modal-content {
   position: relative;
-  background-color: #fff;
+  background-color: rgb(30,30,30);
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
   border: 1px solid #999;

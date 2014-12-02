@@ -9,54 +9,72 @@
 
 ?>
  <?= $this->Html->script('jquery-1'); ?>
+<div class="col-md-2"></div>
+<div id="listePersoPan" class="col-md-8">
 
-<h1>Choose the fighter who is going to enter in the Arena</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Choose the fighter who is going to enter in the Arena</h1>
+        </div>
+    </div>
 
-<table id="table_id" class="display">
-<thead>
-<tr>
-    <th>Avatar</th>
-<th>Name</th>
-<th>Level</th>
-<th>Xp</th>
-<th>Sight</th>
-<th>Strength</th>
-<th>Health</th>
-<th>Enter in the arena</td>
-</tr>
-</thead>
-<tbody>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table id="ex" class="table" accept-charset="utf-8">
+                    <thead>
+                        <tr>
+                            <th>Avatar</th>
+                            <th>Name</th>
+                            <th>Level</th>
+                            <th>Xp</th>
+                            <th>Sight</th>
+                            <th>Strength</th>
+                            <th>Health</th>
+                            <th>Enter in the arena</td>
+                        </tr>
+                    </thead>
+                    <tbody>
 <?php foreach($list as $bla){ ?>
- <tr><td>
-     
-     
-        <?= $this->Html->image($bla['avatar'], array('alt' => 'CakePHP', 'width' => '50px'));?>
-    
-     </td>
-<?php
-echo "<td>".$bla['Fighter']['name']."</td>";
-echo "<td>".$bla['Fighter']['level']."</td>";
-echo "<td>".$bla['Fighter']['xp']."</td>";
-echo "<td>".$bla['Fighter']['skill_sight']."</td>";
-echo "<td>".$bla['Fighter']['skill_strength']."</td>";
-echo "<td>".$bla['Fighter']['current_health'].'/'.$bla['Fighter']['skill_health']."</td>";
-?>
-<td><?= $this->Html->link(
-    'Go in the Arena',
-    array(
-        'controller' => 'Arena',
-        'action' => 'randPosition/'.$bla['Fighter']['id'],
-        'full_base' => true
-    ) );
-?></td>
-    <?php
-} ?>
+                        <tr><td>
 
-</tbody>
-</table>
+
+        <?= $this->Html->image($bla['avatar'], array('alt' => 'CakePHP', 'width' => '50px'));?>
+
+                            </td>
+                                    <?php
+                                    echo "<td>".$bla['Fighter']['name']."</td>";
+                                    echo "<td>".$bla['Fighter']['level']."</td>";
+                                    echo "<td>".$bla['Fighter']['xp']."</td>";
+                                    echo "<td>".$bla['Fighter']['skill_sight']."</td>";
+                                    echo "<td>".$bla['Fighter']['skill_strength']."</td>";
+                                    echo "<td>".$bla['Fighter']['current_health'].'/'.$bla['Fighter']['skill_health']."</td>";
+                                    ?>
+                            <td>
+                                    <?= $this->Html->link(
+                                    'Go in the Arena',
+                                    array(
+                                        'controller' => 'Arena',
+                                        'action' => 'randPosition/'.$bla['Fighter']['id'],
+                                        'full_base' => true
+                                    ) );
+                                    ?>
+                            </td>
+                            <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script>
-    $(document).ready( function () {
-    $('#table_id').DataTable();
-} );
+    $('#Modal').modal(options);
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        $('#table_id').DataTable();
+    });
 </script>

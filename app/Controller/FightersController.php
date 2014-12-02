@@ -97,15 +97,15 @@ class FightersController extends AppController {
         if ($this->request->is('post'))
         {
         
-            if ($this->request->data['vue']== TRUE)
+            if (isset($this->request->data['vue']))
             {
                $this->Fighter->evolution_perso($id, 'vue');
             }
-        if ($this->request->data['force']==TRUE)
+        if (isset($this->request->data['force']))
         {
             $this->Fighter->evolution_perso($id, 'force');
         }
-        if ($this->request->data['vie']==TRUE)
+        if (isset($this->request->data['vie']))
         {
             $this->Fighter->evolution_perso($id, 'vie');
         }

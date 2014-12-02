@@ -16,9 +16,9 @@ class Event extends AppModel{
         
     function getEvent($x,$y)
     {
-        $data = $this->find('first',array('conditions'=>array('coordinate_x'=>$x,'coordinate_y'=>$y)));
+        $data = $this->find('all',array('conditions'=>array('coordinate_x'=>$x,'coordinate_y'=>$y)));
         if ($data){
-        return $data['Event'];}
+        return $data;}
         else {return false;}
         
     }
@@ -51,8 +51,9 @@ class Event extends AppModel{
                  if( (abs($i-$y)+abs($j -$x)) <= $vue_tot){
                     $donnee = $this->getEvent($j,$i);
                     if ($donnee){
-                    $tab[]=array('vue'=> abs($i-$y)+abs($j -$x) , 'data' => $donnee);}
-                   
+                        foreach($donnee as $d){
+                    $tab[]=array('vue'=> abs($i-$y)+abs($j -$x) , 'data' => $d['Event']);}
+                    }
              }
          }
          }

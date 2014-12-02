@@ -13,8 +13,6 @@
  <?= $this->Html->css('monCss'); ?>
       <?= $this->fetch('css'); ?>
 
-
-
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -106,15 +104,9 @@
                                         <input class="form-control" type="password" name="pass" id="pass" placeholder="Password" />
                                         <input class="btn btn-primary" type="submit" name="sub" value="Connexion"/>
                                     </form>
-              <?= $this->Html->link(
-    'Mot de passe oublié ?',
-    array(
-        'controller' => 'Players',
-        'action' => 'recup_mdp',
-        'full_base' => true
-    ) ); ?>
-                                    <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#ModalRecupMdp">
-                                        Mot de passe oublié?
+              
+                                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#ModalRecupMdp">
+                                        Forgot your passsword ?
                                     </button>
 
              <?php } ?>
@@ -161,14 +153,15 @@
       <!--<div class="alert alert-info" role="alert">   <= $this->Session->flash(); ?></div>
   -->
    
-<?= $this->Session->flash(); ?>
+
 
         <div class="row">
-            <div class="col-md-2"></div>
-            <div id="content" class="col-md-8">
+            <div class="col-md-2 col-xs-2"></div>
+            <div id="content" class="col-md-8 col-xs-8">
+                <center><?= $this->Session->flash(); ?></center>
                 <?= $this->fetch('content'); ?>
             </div>
-            <div class="col-md-2"></div>
+            <div class="col-md-2 col-xs-2"></div>
         </div>
 
 

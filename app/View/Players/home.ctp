@@ -72,7 +72,7 @@
             ) );
             ?>-->
 
-            <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#ModalInscription">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalInscription">
                 Sign up
             </button>
         </center>

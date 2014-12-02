@@ -11,7 +11,7 @@ App::uses('Surrounding', 'Model');
 App::uses('Event', 'Model');
 
 class Fighter extends AppModel {
-
+    public $components = array( 'Session' ); 
     public $displayField = 'name';
     public $belongsTo = array(
         'Player' => array(
@@ -117,6 +117,7 @@ class Fighter extends AppModel {
                 $this->set('coordinate_y', $datas['Fighter']['coordinate_y'] = -1);
                 $surrounding->set('coordinate_x', $element['coordinate_x'] = $position['x']);
                 $surrounding->set('coordinate_y', $element['coordinate_y'] = $position['y']);
+                CakeSession::delete('fighter');
             } elseif ($element['type'] == 'trap') {
                 $position = $this->position_aleatoire();
                 $event->createEvent($datas['Fighter']['name'] . " has fallen into a trap !", $datas['Fighter']['coordinate_x'], $datas['Fighter']['coordinate_y']);
@@ -382,10 +383,6 @@ class Fighter extends AppModel {
                + (int) $diff->format('%m') *30*60*60
                + (int) $diff->format('%y') *31536000;
         
-        
-    
-        echo $diff_sec;
-        
         if ($diff->invert == 1){
         if ($diff_sec >= ($max_action * $temps_action)){
             return $max_action;
@@ -421,8 +418,6 @@ class Fighter extends AppModel {
                + (int) $diff->format('%m') *30*60*60
                + (int) $diff->format('%y') *31536000;
 
-        echo 'temps actuel:'.$temps_actuel;
-        echo 'diff sec:'.$diff_sec.'\n';
         if (($diff_sec) >= $temps_action) {
             if (($diff_sec) >= ($max_action * $temps_action)) {
                 //$newtime = $temps_actuel - (($max_action - 1) * $temps_action);
@@ -431,16 +426,13 @@ class Fighter extends AppModel {
                 $interval->invert =1;
                 
             $newtime = $date_actuelle->add($interval)->format('y-m-d H:i:s');
-                echo "il ne devrait rester que 2pts";
             } else {
                 
-                echo "-1pts";
                 $interval = new DateInterval("PT".$temps_action.'S');
                 $newtime = $temps->add($interval)->format('y-m-d H:i:s');
             }
             $data = array('id' => CakeSession::read('fighter'), 'next_action_time' => $newtime);
             $this->save($data);
-            echo 'newtime:'.$newtime;
             return true;
         } else {
             return false;

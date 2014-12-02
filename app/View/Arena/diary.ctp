@@ -47,7 +47,13 @@
 </div>  
 
 <script>
-    $(document).ready( function () {
-    $('#ex').DataTable();
-} );
+    $(document).ready(function () {
+        $('#ex').DataTable({
+            "order": [[0,"desc"]],
+            "scrollY": "550px",
+            "scrollColapse": true
+        });
+        //$('#ex').DefaultView.Sort = "Date DESC";
+        
+    });
 </script>

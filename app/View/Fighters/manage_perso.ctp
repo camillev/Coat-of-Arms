@@ -68,7 +68,7 @@
         <h4 class="modal-title" id="myModalLabel">Modifier votre avatar</h4>
       </div>
       <div class="modal-body">
-        <form method="POST" action=<?= "../update_avatar/" . $id ?> class="well form-inline" enctype="multipart/form-data">
+        <form method="POST" action=<?= "../updateAvatar/" . $id ?> class="well form-inline" enctype="multipart/form-data">
             <input class="form-control" type="file" name="data[addPerso][avatar_file]"  placeholder="Image" />
             <input class="btn btn-primary" type="submit" name="sub" value="Add"/>
     </form>

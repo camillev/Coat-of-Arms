@@ -60,14 +60,10 @@ class Player extends AppModel{
     
     function connexion($email, $pass)
     {
-        
-        //$pass_hache = sha1($_POST['pass']); //Récupere le mot de passe et le hache
-        //$pass_hache = sha1($pass);
+       
  $passwordHasher = new SimplePasswordHasher(array('hashType' => 'sha256')); 
         $pass_hache = $passwordHasher->hash( $pass);
-        // Vérification des identifiants
-        //$play = $this->query("SELECT id FROM players WHERE email = '$email' AND password = '$pass_hache' ");
-      
+     
         $play=$this->find('first',array('conditions'=>array('email'=> $email, 'password' => $pass_hache)));
  
     if (empty($play))
@@ -80,17 +76,6 @@ class Player extends AppModel{
      
     CakeSession::start();
       CakeSession::write('nom',array("id" => $play['Player']['id'], "email" => $email));
-   /*$fighter = $this->Fighter->find('first',array('conditions'=>array('player_id'=> $play[0][Player]['id'],'coordinate_x !='=> '-1' )));
-    if(!empty($fighter))
-    {
-        CakeSession::write('fighter',$fighter['Fighter']['id']);
-    }*/
-      
-      
-      //$this->response->header('location' , 'character' );
-      //$this->response->send();
-      
-        
         RETURN TRUE;
 	
     }

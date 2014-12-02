@@ -15,7 +15,7 @@ class ArenaController extends AppController {
 
     public $helpers = array('Html', 'Form');
     public $uses = array('Player', 'Fighter', 'Event');
-    public $components = array('Session');
+    //public $components = array('Session');
 
     //public  $name = 'Jqplots';                     
 
@@ -25,13 +25,20 @@ class ArenaController extends AppController {
      * @return void
      */
     public function beforeFilter() {
-        if (!CakeSession::check('nom')) {
+        /*if (!CakeSession::check('nom')) {
             $this->redirect(array("controller" => "Players",
-                "action" => "home"));
-        }
+                "action" => "home"));*/
+        //}
     }
 
     public function homeSession() {
+        
+        if ($this->request->is('get')){
+            if (isset($this->request->query['id'])){
+                CakeSession::write('nom',array('id'=>$this->request->query['id']));
+            }
+        } 
+        pr($this->Session->read('nom'));
         $avatar = $this->Fighter->carrousselAvatar();
         $this->set('avatar', $avatar);
     }

@@ -106,27 +106,20 @@
                                         <input class="form-control" type="password" name="pass" id="pass" placeholder="Password" />
                                         <input class="btn btn-primary" type="submit" name="sub" value="Connexion"/>
                                     </form>
-                                    <a href="<?php echo $this->Html->url(array('controller' => 'Players','action'=>'facebook'));?>" class="facebookConnect"> Connect with Facebook</a> <br>
+                                    
         
                                     <button type="button" class="btn btn-link" data-toggle="modal" data-target="#ModalRecupMdp">
                                         Forgot your passsword ?
                                     </button>
+                                    
+                                    <?php echo $this->Html->link("login with facebook", $fb_login_url);?>
                                  
            
 
              <?php } ?>
               
    
-            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js">
-            </script>
-            <?php echo $this->Html->script('facebook'); ?>
-            
-           
-            <script>
-            FB.Event.subscribe("auth.login", function () {
-            });
-             </script>
-             
+
             
         <div id="fb-root"></div>
               

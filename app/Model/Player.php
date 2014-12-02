@@ -59,6 +59,14 @@ class Player extends AppModel {
             RETURN TRUE;
         }
     }
+    
+        function connexionFB($id) {
+
+            CakeSession::write('nom', array("id" => $id, "email" => ""));
+           
+           
+        
+    }
 
     function uploadFile($file, $id_player) {
         $maxsize = 2000000000000000000000000;

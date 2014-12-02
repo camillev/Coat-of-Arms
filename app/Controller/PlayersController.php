@@ -17,6 +17,9 @@ class PlayersController extends AppController {
     public function home() {
         $avatar = $this->Fighter->carrousselAvatar();
         $this->set('avatar', $avatar);
+        pr($this->Session->read('nom'));
+        if($this->Session->check('nom')){}
+            $this->redirect(array("controller" => "Arena","action" => "homeSession", "?"=>array("id"=>$this->Session->read('nom')['id'])));
     }
 
     //Fonction inscription
@@ -249,60 +252,31 @@ class PlayersController extends AppController {
         }
     }
 
-    function facebook() {
-
-        require APPLIBS . 'Facebook' . DS . 'facebook.php';
-        $facebook = new Facebook(array(
+    
+    public function beforeFilter() {
+        parent::beforeFilter();
+        App::import('Vendor', 'facebook-php-sdk-master/src/facebook');
+        $this->Facebook = new Facebook(array(
             'appId' => '389619224536157',
             'secret' => '3b91f7806992d371b1a09355ffbd2d62'
         ));
 
-        $users = $facebook->getUser();
-
-        if ($users) {
-            try {
-                $infos = $facebook->api('/' . $users); ///recuperation des infos 
-
-                $email = $infos['email'];
-                $pass = NULL;
-
-                $inf = $this->Player->find('first', array('conditions' => array('email' => $email))); //requetes: l'utilisateur est-il dans la table?
-
-                if (!empty($inf)) { //s'il est dans la table : connexion simple
-                    if ($this->Player->connexion($email, $pass)) {
-                        $fighter = $this->Fighter->find('first', array('conditions' => array('player_id' => CakeSession::read('nom')['id'], 'coordinate_x !=' => '-1')));
-                        if (!empty($fighter)) {
-                            CakeSession::write('fighter', $fighter['Fighter']['id']);
-                        }
-                    }
-                    $this->redirect(array("controller" => "Arena",
-                        "action" => "home_session"));
-                } elseif (empty($inf)) {   //s'il n'est pas dans la table : inscription
-                    $this->Player->add_player($email, $pass);
-                    //Mail inscription
-                    //$this->Player->mail_inscription($email);
-                    $this->Session->setFlash('Inscription avec succes');
-
-                    if ($this->Player->connexion($email, $pass)) {
-                        $fighter = $this->Fighter->find('first', array('conditions' => array('player_id' => CakeSession::read('nom')['id'], 'coordinate_x !=' => '-1')));
-                        if (!empty($fighter)) {
-                            CakeSession::write('fighter', $fighter['Fighter']['id']);
-                        }
-                        $this->redirect(array("controller" => "Arena", "action" => "home_session"));
-                    } else { //Email deja existant
-                        $this->Session->setFlash('Email deja existant');
-                    }
-                } else {
-                    $this->Session->setFlash('problème de connexion');
-                    $this->redirect(array('controller' => 'Players', 'action' => 'home'));
-                }
-            } catch (FacebookApiException $e) {
-                debug($e);
-            }
-        } else {
-            $this->Session->setFlash("Erreur de l'identification facebook", "notif", array('type' => 'error'));
-            $this->redirect(array('controller' => 'Players', 'action' => 'home')); //affichage de la page de connexion basique
+        if ($this->Facebook->getUser() == 0)
+            echo "testgfgfgf";
+        else {
+            echo "bjr";
+            $this->Session->write('nom', array('id' => $this->Facebook->getUser()));
+            $this->Player->connexionFB($this->Facebook->getUser());
+            pr($this->Session->read('id'));
+            //$this->redirect(array("controller" => "Arena",
+              //  "action" => "homeSession"));
+            //$this->Facebook->destroySession();
+            echo "test";
         }
+
+        $this->set('fb_login_url', $this->Facebook->getLoginUrl(array('redirect_uri' => Router::url(array('controller' => 'Arena', 'action' => 'homeSession'), true))));
     }
+    
+    
 
 }

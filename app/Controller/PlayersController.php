@@ -18,8 +18,9 @@ class PlayersController extends AppController {
         $avatar = $this->Fighter->carrousselAvatar();
         $this->set('avatar', $avatar);
         pr($this->Session->read('nom'));
-        if($this->Session->check('nom')){}
+        if($this->Session->check('nom')){
             $this->redirect(array("controller" => "Arena","action" => "homeSession", "?"=>array("id"=>$this->Session->read('nom')['id'])));
+            }
     }
 
     //Fonction inscription
